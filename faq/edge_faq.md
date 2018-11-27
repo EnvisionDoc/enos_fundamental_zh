@@ -1,4 +1,4 @@
-# FAQs about EnOS Edge
+# FAQs about EnOS™ Edge
 
 <!--
 How should I set up my page?

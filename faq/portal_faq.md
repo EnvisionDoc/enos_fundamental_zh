@@ -1,4 +1,4 @@
-# FAQs about EnOS Console
+# FAQs about EnOS™ Console
 
 <!--
 How should I set up my page?

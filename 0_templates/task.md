@@ -7,7 +7,7 @@
 简要描述Short description xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 <!---
 简要描述需说明为什么要做这个操作，做这个操作可以帮用户达到什么目的。比如：
-EnOS为常见能源设备与实体提供了预先定义的数据模型，如没有符合你的设备的预定义模型，可新增客制化数据模型。
+EnOS™为常见能源设备与实体提供了预先定义的数据模型，如没有符合你的设备的预定义模型，可新增客制化数据模型。
 -->
 
 ## Before you begin 先决条件

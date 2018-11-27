@@ -1,10 +1,10 @@
-# Using EnOS IoT MQTT SDK for Java
+# Using EnOS™ IoT MQTT SDK for Java
 
-This article instructs how to prepare your development environment to use the *EnOS IoT MQTT SDK for Java*.
+This article instructs how to prepare your development environment to use the *EnOS™ IoT MQTT SDK for Java*.
 
 * [Installing Java JDK SE](#installjava)
 * [Installing Maven](#installmaven)
-* [Obtaining EnOS IoT MQTT SDK for Java](#installiot)
+* [Obtaining EnOS™ IoT MQTT SDK for Java](#installiot)
 	* [Include dependency in Maven project](#installiotmaven)
 	* [Building from source](#installiotsource)
 * [Feature list](#featurelist)
@@ -14,28 +14,28 @@ This article instructs how to prepare your development environment to use the *E
 
 <a name="installjava"></a>
 ## Installing Java JDK SE
-To use the EnOS IoT MQTT SDK for Java, you will need **Java SE 8**.
+To use the EnOS™ IoT MQTT SDK for Java, you will need **Java SE 8**.
 
 <a name="installmaven"></a>
 ## Installing Maven
-EnOS IoT MQTT SDK for Java, we recommend you to use **_Maven 3_**.
+EnOS™ IoT MQTT SDK for Java, we recommend you to use **_Maven 3_**.
 
 <a name="installiot"></a>
-## Obtaining EnOS IoT MQTT SDK for Java
+## Obtaining EnOS™ IoT MQTT SDK for Java
 
-You can obtain the EnOS IoT MQTT SDK through the following methods:
+You can obtain the EnOS™ IoT MQTT SDK through the following methods:
 * Include the project as a dependency in your Maven project.
 * Download the source code by cloning this repo and build on your machine
 
 <a name="installiotmaven"></a>
-### Get EnOS IoT MQTT SDK for Java from Maven (as a dependency)
-_This is the recommended method of including the EnOS IoT SDKs in your project._
+### Get EnOS™ IoT MQTT SDK for Java from Maven (as a dependency)
+_This is the recommended method of including the EnOS™ IoT SDKs in your project._
 
-* Navigate to http://search.maven.org, search for **com.envisioniot.enos** and take note of the latest version number (or the version number of whichever version of the sdk you desire to use).
-* In your main pom.xml file, add the EnOS IoT MQTT SDK as a dependency as follows:
+* Navigate to http://search.maven.org, search for **com.envisioniot.EnOS™** and take note of the latest version number (or the version number of whichever version of the sdk you desire to use).
+* In your main pom.xml file, add the EnOS™ IoT MQTT SDK as a dependency as follows:
 ```xml
 	<dependency>
-	  <groupId>com.envisioniot.enos</groupId>
+	  <groupId>com.envisioniot.EnOS™</groupId>
 	  <artifactId>iot_mqtt_sdk</artifactId>
 	  <version>0.0.1-SNAPSHOT</version>
 	  <!--You might need to change the version number as you need.-->
@@ -43,17 +43,17 @@ _This is the recommended method of including the EnOS IoT SDKs in your project._
 ```
 
 <a name="installiotsource"></a>
-### Build EnOS IoT MQTT SDK for Java from the source code in this repo
-* Get a copy of the **Azure IoT SDK for Java** from master branch of the GitHub (current repo). You should fetch a copy of the source from the **master** branch of the GitHub repository: <https://github.com/EnvisionIot/enos-iot-mqtt-java-sdk>
+### Build EnOS™ IoT MQTT SDK for Java from the source code in this repo
+* Get a copy of the **Azure IoT SDK for Java** from master branch of the GitHub (current repo). You should fetch a copy of the source from the **master** branch of the GitHub repository: <https://github.com/EnvisionIot/EnOS™-iot-mqtt-java-sdk>
 ```
-	git clone https://github.com/EnvisionIot/enos-iot-mqtt-java-sdk.git
+	git clone https://github.com/EnvisionIot/EnOS™-iot-mqtt-java-sdk.git
 ```
 * When you have obtained a copy of the source, you can build the SDKs for Java.
 
 <a name="featurelist"></a>
 ## Key features
 
-The EnOS IoT MQTT SDK supports the following functions:
+The EnOS™ IoT MQTT SDK supports the following functions:
 
 - 支持子设备的身份注册
 - 支持网关设备的拓扑增删改查
@@ -69,7 +69,7 @@ The EnOS IoT MQTT SDK supports the following functions:
 
 <a name="apiref"></a>
 ## API reference
-Link to Java SDK reference in EnOS Help Center.
+Link to Java SDK reference in EnOS™ Help Center.
 
 <a name="samplecode"></a>
 ## Sample code
@@ -127,11 +127,11 @@ When clientId = 123, deviceKey = test, productKey = 123, timestamp = 15244487220
 
 sign= toUpperCase(hmacsha1(clientId123deviceKeytestproductKey123timestamp1524448722000deviceSecret))
 
-在构建MqttClient的参数中，product， productKey，deviceKey以及deviceSecret可以从控制台中获取，或者通过EnOS REST API进行获取。
+在构建MqttClient的参数中，product， productKey，deviceKey以及deviceSecret可以从控制台中获取，或者通过EnOS™ REST API进行获取。
 
 ### 发送命令
 
-#### 发送上行命令（从设备到EnOS Cloud）
+#### 发送上行命令（从设备到EnOS™ Cloud）
 当连接成功后，我们就可以发送命令了，比如，以下样例代码在回调函数中让子设备进行login操作。
 
 这里解释下回调函数的意图，由于网关型设备如果断链后，服务端会自动把此网关型设备拓扑结构中的子设备全部自行下线。但是由于MQTT客户端允许自动重连，所以当识别到断线连接后，会主动触发onConnectLost回调。当自动重连生效后，应该把子设备的上线的逻辑放于onConnectSuccess回调方法中。
@@ -189,7 +189,7 @@ public <T extends IMqttResponse> void publish(IMqttRequest<T> request, IResponse
 
 两者之间的区别在于：带有回调的publish方法是异步的，带有返回参数的publish方法是同步的，这里还需要注意，如果MeasurepointPostRequest不小心调用了同步的push，那么会一直等待，但是服务端除了错误之外，并没有返回值，所以会一直等到超时。
 
-#### 发送下行命令（从EnOS Cloud到设备）
+#### 发送下行命令（从EnOS™ Cloud到设备）
 下面我介绍下如何处理下行消息，下行消息主要是置数，设备服务调用等，在sdk中是以Command来表示的，比如以下实例，我监听了测点置数的事件以及服务端禁用某个设备的事件。
 
 
@@ -222,7 +222,7 @@ client.setArrivedMsgHandler(DisableDeviceCommand.class, new IMessageHandler<Disa
 
 至此，sdk的大体功能就介绍完了，上下行消息可以再sdk中自行去寻找，用法都大同小异。
 
-![packages](https://github.com/EnvisionIot/enos-iot-mqtt-java-sdk/blob/master/src/main/resources/imgs/tapd_20716331_base64_1534760042_26.png)
+![packages](https://github.com/EnvisionIot/EnOS™-iot-mqtt-java-sdk/blob/master/src/main/resources/imgs/tapd_20716331_base64_1534760042_26.png)
 
 
 ----------

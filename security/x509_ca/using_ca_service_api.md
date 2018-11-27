@@ -59,7 +59,7 @@ Call the API with the following request:
         <td>reqData</td>
         <td>true</td>
         <td>string</td>
-        <td>Certificate signing request to get X.509 certificate, Base64 encoded, enclosed between <P>"-----BEGIN CERTIFICATE REQUEST-----"</p> and <p>"-----END CERTIFICATE REQUEST-----".<p> The request is expressed in ASN.1.</td>
+        <td>Certificate signing request to get X.509 certificate, Base64 encoded, enclosed between "-----BEGIN CERTIFICATE REQUEST-----" and "-----END CERTIFICATE REQUEST-----". The request is expressed in ASN.1.</td>
       </tr>
     </table>
 
@@ -117,3 +117,38 @@ Call the API with the following request:
 
 For how to add common REST request parameters in the request body to verify the identity and integrity, refer to the tutorial [EnOS APIs](https://docs.envisioniot.com/docs/enos-tutorials/en/latest/application_development/try/module_4.html). For details about the API parameters, please refer to **EnOS Portal > API Service > Public API**.
 <!--@huangzhi, are the APIs available as part of public API now? Are you sure the link is correct? This is a tutorial. -->
+
+## Renewing X.509 certificate
+
+An issued certificate has validity period(e.g., 365 days), you need to renew the certificate before its expiration.
+
+To renew the certificate, call the API with the following request:
+
+  ```
+  POST /enos/CA/renewCertificate
+  ```
+
+### URI parameters
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>reqData</td>
+    <td>true</td>
+    <td>string</td>
+    <td>The new certificate signing request to get X.509 certificate, Base64 encoded, enclosed between "-----BEGIN CERTIFICATE REQUEST-----" and "-----END CERTIFICATE REQUEST-----". The request is expressed in ASN.1.</td>
+  </tr>
+  <tr>
+    <td>oldCertSN</td>
+    <td>true</td>
+    <td>int</td>
+    <td>The serial number of the certificate will be renewed.</td>
+  </tr>
+</table>
+
+For how to add common REST request parameters in the request body to verify the identity and integrity, refer to the tutorial [EnOS APIs](https://docs.envisioniot.com/docs/enos-tutorials/en/latest/application_development/try/module_4.html). For details about the API parameters, please refer to **EnOS Portal > API Service > Public API**.

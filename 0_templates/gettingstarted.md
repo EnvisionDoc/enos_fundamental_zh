@@ -1,13 +1,13 @@
 # Getting started with <prod_serv_name>
 <!--
 The short description should be a single, concise paragraph that contains one or two sentences and no more than 50 words.
-Briefly mention what the user's learning goal is and include the following SEO keywords in the title short description: EnOS, ServiceName, tutorial.
+Briefly mention what the user's learning goal is and include the following SEO keywords in the title short description: EnOS™, ServiceName, tutorial.
 -->
 
 ## Before you begin 先决条件
 There should be a one sentence intro to the prereqs. If you don't have prereqs, remove this section For example:
-- You must have an EnOS account.
-- You must have connected your devices into EnOS.
+- You must have an EnOS™ account.
+- You must have connected your devices into EnOS™.
 
 ## Step 1: Title should be task oriented and descriptive
 

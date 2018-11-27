@@ -43,11 +43,11 @@ Definition lists and parameter lists are two cases where you might want to pass 
 
 Example definition list:
 <dl>
-<dt><strong>term</strong></dt>
+<dt>term</dt>
 <dd>definition</dd>
-<dt><strong>term</strong></dt>
+<dt>term</dt>
 <dd>definition</dd>
-<dt><strong>term</strong></dt>
+<dt>term</dt>
 <dd>definition</dd>
 </dl>
 

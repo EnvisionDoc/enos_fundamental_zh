@@ -1,4 +1,4 @@
-# FAQs about EnOS APIs
+# FAQs about EnOS™ APIs
 
 <!--
 How should I set up my page?

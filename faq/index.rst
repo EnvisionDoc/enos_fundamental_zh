@@ -1,7 +1,7 @@
 Frequently Asked Questions
 --------------------------
 
-Find answers to frequently asked questions about EnOS.
+Find answers to frequently asked questions about EnOS™.
 
 
 .. toctree::

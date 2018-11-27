@@ -1,4 +1,4 @@
-# EnOS Glossaries
+# EnOS™ Glossaries
 
 ## A
 
@@ -8,7 +8,7 @@ In IAM, a policy is a collection of access rules. An organization administrator 
 
 ### access rule
 
-In IAM, an access rule refers to a user's operational permission to an EnOS resource.
+In IAM, an access rule refers to a user's operational permission to an EnOS™ resource.
 
 ### asset
 
@@ -40,7 +40,7 @@ A directed acyclic graph is a directed graph with no loops. It consists of a fin
 
 ### dashboard
 
-A dashboard is a form of visual presentation of data. In EnOS, reports can be prepared using the reporting tool to drag and drop charts or controls. Multiple types of analytical charts and controls may be included in the reports, and such operations as filtering, screening and associated queries are supported.
+A dashboard is a form of visual presentation of data. In EnOS™, reports can be prepared using the reporting tool to drag and drop charts or controls. Multiple types of analytical charts and controls may be included in the reports, and such operations as filtering, screening and associated queries are supported.
 
 ### data development
 
@@ -48,15 +48,15 @@ Data development refers to a series of data computing processes (including data 
 
 ### data explorer
 
-Data explorer is a tool provided by EnOS for visualizing interactive data analysis, and for querying, analyzing, and visualizing data.
+Data explorer is a tool provided by EnOS™ for visualizing interactive data analysis, and for querying, analyzing, and visualizing data.
 
 ### data integration
 
-Data integration is a tool provided by EnOS for data synchronization.
+Data integration is a tool provided by EnOS™ for data synchronization.
 
 ### data synchronization
 
-Data synchronization is a data transmission process to maintain data consistency between the source and target systems. This process may be accompanied by certain data conversion or cleaning. In EnOS, data synchronization refers to the process of data transmission between EnOS external data sources and storage products in the EnOS cloud.
+Data synchronization is a data transmission process to maintain data consistency between the source and target systems. This process may be accompanied by certain data conversion or cleaning. In EnOS™, data synchronization refers to the process of data transmission between EnOS™ external data sources and storage products in the EnOS™ cloud.
 
 ### dataset
 
@@ -64,11 +64,11 @@ A dataset is a logical table or view that establishes a connection with a source
 
 ### device
 
-A device is a physical device that is subordinate to a product. A device has a unique DeviceKey assigned by EnOS. A device can connect directly to the EnOS Cloud.
+A device is a physical device that is subordinate to a product. A device has a unique DeviceKey assigned by EnOS™. A device can connect directly to the EnOS™ Cloud.
 
 ### device secret
 
-The device secret issued by EnOS is usually paired with Device key and used in conjunction with device key for one-device-one-key authentication.
+The device secret issued by EnOS™ is usually paired with Device key and used in conjunction with device key for one-device-one-key authentication.
 
 ## E
 
@@ -86,7 +86,7 @@ Full-load synchronization means that all data of the data source is loaded at on
 
 ### gateway
 
-A gateway is the connector between different networks, which connects a sub device to the EnOS Cloud.
+A gateway is the connector between different networks, which connects a sub device to the EnOS™ Cloud.
 
 ## H
 
@@ -94,7 +94,7 @@ A gateway is the connector between different networks, which connects a sub devi
 
 ### Identity and Access Management (IAM)
 
-The user identity management and resources access control service that EnOS provides to the clients. With IAM, you can create and manage users and control who has access or operational permissions to what  resources of the organization.
+The user identity management and resources access control service that EnOS™ provides to the clients. With IAM, you can create and manage users and control who has access or operational permissions to what  resources of the organization.
 
 ### incremental synchronization
 
@@ -102,7 +102,7 @@ Incremental synchronization means that, upon completion of a certain data synchr
 
 ### IoT Hub
 
-The IoT Hub is a cloud access service provided by EnOS for device access. A smart device can establish a secure two-way link with the cloud IoT Hub through the mainstream Internet of Things protocol (MQTT protocol) to quickly build an IoT project or application.
+The IoT Hub is a cloud access service provided by EnOS™ for device access. A smart device can establish a secure two-way link with the cloud IoT Hub through the mainstream Internet of Things protocol (MQTT protocol) to quickly build an IoT project or application.
 
 ## J
 
@@ -126,7 +126,7 @@ A message queue is a container in which messages are saved during transmission. 
 
 ### meta data
 
-Meta data is the data about data, which is extracted from information resources to describe its characteristics, content, and structure. It is used to organize, describe, retrieve, store, and manage information resources. Meta data managed in EnOS mainly includes the descriptions of databases, data tables, or data content itself.
+Meta data is the data about data, which is extracted from information resources to describe its characteristics, content, and structure. It is used to organize, describe, retrieve, store, and manage information resources. Meta data managed in EnOS™ mainly includes the descriptions of databases, data tables, or data content itself.
 
 ## N
 
@@ -134,7 +134,7 @@ Meta data is the data about data, which is extracted from information resources 
 
 ### offline computing
 
-<p>Please refer to <a href="#batch_computing">batch computing</a>.</p>
+Please refer to <a href="#batch_computing">batch computing</a>.
 
 ### offline data synchronization
 
@@ -164,11 +164,11 @@ In Hive databases, a partition refers to a logical storage. In querying Hive tab
 
 ### product
 
-In EnOS device connection model, a product is the logical combination of a group of devices with shared functionality. A product has a globally unique ProductKey issued by EnOS.
+In EnOS™ device connection model, a product is the logical combination of a group of devices with shared functionality. A product has a globally unique ProductKey issued by EnOS™.
 
 ### product secret
 
-The product secret issued by EnOS is usually paired with product key and is used in conjunction with product key for the one-product-one-key authentication.
+The product secret issued by EnOS™ is usually paired with product key and is used in conjunction with product key for the one-product-one-key authentication.
 
 ### publish
 
@@ -180,7 +180,7 @@ Publish is a type of operation permission for Topics, with permission to send me
 
 ### real-time computing
 
-<p>Please refer to <a href="#stream_computing">stream computing</a>.</p>
+Please refer to <a href="#stream_computing">stream computing</a>.
 
 ### resource
 
@@ -194,7 +194,7 @@ A service is a capability or method by which a device can be called externally. 
 
 ### service account
 
-A service account is the account that EnOS assigns to an application or service. The service account uniquely identifies an application. The account is required to call EnOS APIs through the service account to access the EnOS resources.
+A service account is the account that EnOS™ assigns to an application or service. The service account uniquely identifies an application. The account is required to call EnOS™ APIs through the service account to access the EnOS™ resources.
 
 ### site
 
@@ -210,7 +210,7 @@ Structured data, or row data, is a logically expressed and implemented data from
 
 ### sub device
 
-A sub device is a physical device that is subordinate to a product. A sub device connects to the EnOS Cloud through a gateway.
+A sub device is a physical device that is subordinate to a product. A sub device connects to the EnOS™ Cloud through a gateway.
 
 ### subscribe
 
@@ -218,7 +218,7 @@ Subscribe is a type of operation permission for Topics, with permission to acqui
 
 ### system resources
 
-System resources are those assigned to the organization by EnOS by default.
+System resources are those assigned to the organization by EnOS™ by default.
 
 ## T
 
@@ -261,7 +261,7 @@ In IAM, a user group is a combination of users who have the same permissions.
 
 ### user identity
 
-The user identity is the unique identifier of a user in EnOS. A user is authenticated through the user identity to access the EnOS Console and APIs and authorized to manage and operate the EnOS resources, applications or systems, etc..
+The user identity is the unique identifier of a user in EnOS™. A user is authenticated through the user identity to access the EnOS™ Console and APIs and authorized to manage and operate the EnOS™ resources, applications or systems, etc..
 
 ## V
 
