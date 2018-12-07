@@ -1,14 +1,13 @@
-Frequently Asked Questions
+FAQs
 --------------------------
 
 Find answers to frequently asked questions about EnOS™.
 
 
 .. toctree::
+   :maxdepth: 1
 
-   api_faq
    device_connection_faq
-   edge_faq
-   event_management_faq
-   mqtt_faq
-   portal_faq
+   realtime_data_processing_faq
+   data_ide_faq
+   api_faq
