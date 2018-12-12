@@ -1,25 +1,22 @@
-# Security Overview
+# 安全概述
 
-The Internet of Things(IoT) is a irreversible wave of future, it provides comprehensive services worldwide, helps tranditional businesses make digital transition, creating value in reduing operation cost, improving production efficiency in order to increase the revenue. On the other hand, customers' concerns about the IoT security growing day by day. IoT Security, privacy and ethics, and compliance are now becoming big challenges to businesses around the world. Comparing to traditional cyber security coping issues about software development and implementation, a secure IoT solution requires secure provisioning of devices, secure communication between devices and cloud, secure data processing and storage in the cloud, secure application development,etc.
+物联网（IoT）为全球业务提供广泛的联系，帮助传统企业进行数字化转型，在降低运营成本的同时创造价值，提高生产效率，增加企业收入。
 
-This article introduces how EnOS provides a secure and prvivate IoT solution. EnOS is a comprehensive IoT operation system offering complete end-to-end solution, including fast device connection, device modelling and management, data processing and analytics, machine learning, application development, with security built in every stage from the bottom up.
+然而，另一方面，物联网的安全性、隐私、道德、和守法对世界各地的企业来说是一个前所未有的巨大挑战。物联网解决方案融合了物理世界和数字世界，这也意味着潜在的攻击和风险可能同时发生。物联网也带来了更多关于隐私和道德的关注。企业必须关注数据的安全性，考虑谁有权访问何种资源，谁有权管理访问控制策略等等。
 
-## Introduction
+因此，与传统软件开发和实施的网络安全需求相比，安全的IoT解决方案需要对整个数据旅程的保护、防御、和治理，包括设备的安全接入、设备和云端之间的安全通信、云端的安全数据处理和存储、安全的应用程序开发等。
 
-The Internet of Things(IoT) creates values for businesses worldwide today, while many companies hesitant to adopt IoT solutions because of security, privacy and ethics, and complicance concerns.
+本文详细介绍EnOS提供的安全和私有化的物联网解决方案。EnOS是一个综合性的物联网操作系统，对每个环节都采用了内置的安全防护技术。
 
-Unlike traditional cyber security technology, IoT solutions merge the physical and digital world together, which means potential attacks and risks may occur in these two worlds. Another concern is privacy and ethics. Companies are always sensitive to their data, including transparency collection, who has the right perimissions to access what resources, who takes the privilege to manage these access control policies, etc. How to manage risks for human beings' operations along with industrial stardard of compliance issues is the final concern.
+## EnOS安全防护一览
 
-It is a challenge for most of the companies to choose a right IoT solution considering the securiy, privacy and ethics and compliance concerns, let alone to find a provider with extensive experience both in vertical domain knowledge and security.
+EnOS管理超过100兆瓦的客户能源资产，其中的大部分是全球大型能源企业。可靠的安全实施和原则是EnOS设计的核心，以确保客户的系统和数据的安全、隐私、合规始终得到维护。
 
-EnOS manages over 100 Gigawatt of asset for our clients, most of them are giant energy company over the world. Solid security practices and principles are core to the design of EnOS to ensure that the security, privacy and ethics, and complicance of our clients’ systems and data is maintained at all times.
+EnOS利用全球领先的云服务供应商的安全基础设施的优势来维护云端安全和数据隐私，例如客户操作系统补丁维护、防火墙配置、灾备等。EnOS的网络安全也由全球领先的供应商提供的网络基础设施保护，包括虚拟私有云（VPC），限制接入点、基于规则的网络流量、IPsec VPN等。为保护数据的安全传输，应用程序必须通过HTTPS或TLS调用EnOS REST API接口，设备和EnOS Edge可以通过TLS保护的数据通道连接到EnOS云端。
 
-EnOS takes the advantages of secure IaaS vendors to maintain the cloud infrastructure security and data privacy, such as guest operating system patching, firewall configuration, and disaster recovery. The network of EnOS is secured by world-class network infrastructure also provided by the IaaS verdors, including Virtual Private Cloud(VPC), limited access points, rule-based network traffic, IPsec VPN, etc.
-Considering secure transimission protection, applications connect to EnOS REST APIs MUST via HTTPS or Transport Layer Security(TLS), devices and EnOS edge can connect to cloud-based IoT Hub via TLS protected data tunnel.
+EnOS提供安全的边缘设备、安全的设备连接、安全的数据存储等服务。下文详细介绍EnOS在4个领域的安全保护措施。
 
-EnOS offers secure edge, secure connectivity, secure and private data storage and processing, and so on. The rest of this article breaks down the EnOS into four primary security areas.
-
-## Secure edge
+## Secure Edge
 
 Each EnOS edge has a unique indentity key which can be used by the IoT Hub to communicate with the edge while it is in operation.The key with a user-defined edge ID forms the basis of a token and a signature used in communication between the edge and the IoT Hub. These edge IDs can use an existing fixed identity such as serial number, network MAC address which is not simple to be changed. The edge IDs are managed by _edge device provisioner_ in the IoT Hub via EnOS console or APIs. The IoT Hub provides secure storage of edge identities and secret keys.
 
@@ -27,7 +24,9 @@ EnOS edge has built-in firmware/software upgrade feature to ensure that critical
 
 Unused USB ports are disabled by default to prevent malicious access. Only network ports used by necessary applications and services are enabled by network policies explicitly.
 
-## Secure connectivity
+Some type of EnOS edges are manufactured with TPM chips. EnOS may utilize this hardware feature to store the client certificate securely.
+
+## Secure Connectivity
 
 EnOS edge and other compatible edge devices communicate with EnOS cloud via TLS protected data tunnel. X.509 certificate based bi-directional authentication is enforced for each session. To ensure that each edge has its exclusive client certificate, the certificate request exchange is performed by edge during its first power-on procedure. Edge device generates public certificate request containing unique device identifier (e.g., serial number, network MAC address) and corresponding private key according to PKI standard. Certificate request will be forwarded to EnOS certification service or public-trusted CA for sign. Later, issued public certificate will be sent back to edge device, to be stored together with private key locally.
 
@@ -36,7 +35,7 @@ To ensure secure connections from the devices and end users to the EnOS portal, 
 Devices and end users can establish secure communication sessions to API endpoints that EnOS services provide. HTTPS is used for accessing the REST APIs.For the TLS protected data channel between the devices and EnOS cloud, X.509 certification based bidirectional authentication is adopted, all data is encrypted during transmission.
 
 
-## Secure cloud and data
+## Secure Cloud and Data
 EnOS takes famous IaaS verdors as its cloud infrastructure providers. The IaaS vendor is responsible for protecting the global infrastructure that hosts all services provisioned in the cloud. The infrastructure is comprised of the hardware, software, networking, and facilities that run the cloud services. For these managed cloud services, the IaaS vendor manages basic security operations such as guest operating system patching, firewall configuration, and disaster recovery.
 
 From the security perspective, adopting an IaaS vendor brings the following benefits:
@@ -57,7 +56,7 @@ Within EnOS, data (such as files, database) belonging to different clients (a.k.
 
 In addition, EnOS also has capability of providing dedicated storage for those clients with highly sensitive data, to meet the requirement of some special scenarios.
 
-## Secure application
+## Secure Application
 
 While the underlying IaaS secures the physical venues, network, operating systems, and managed services. EnOS secures the applications that are hosted on the platform, including applications that manage massive IoT assets .
 
@@ -73,13 +72,13 @@ Identity and Access Management (IAM) enables you to create and manage permission
 
 EnOS’ built-in IAM schemes provide capabilities of identity management, authentication, authorization, and auditing.
 
-#### Network protection
+#### Network Protection
 EnOS hosts several automated monitoring tools to detect abnormal and unauthorized activities and situations at ingress and egress points. These tools monitor the server and network usage, port scanning activities, application usage, and unauthorized intrusion attempts. The tools allow custom performance metric thresholds to be set for abnormal activities.
 
-#### Data encryption
+#### Data Encryption
 Sensitive data, defined by built-in and custom rules, is encrypted before being put into files or databases. Decryption happens automatically when data is retrieved through the EnOS API.
 
-#### Logging and monitoring
+#### Logging and Monitoring
 Centralized logging service in EnOS is configured to aggregate activity logs and show security related metrics at the real-time.
 
 EnOS logs all user activities to the portal and API invocations.The activity log contains details about each access request including the request type, requested resource, requestor’s IP, and the date and time of the request. Alerts are triggered when defined thresholds are exceeded.

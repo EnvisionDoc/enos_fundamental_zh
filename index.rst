@@ -8,6 +8,7 @@ EnOS智能物联网操作系统
 
    overview/enos_introduction
    overview/services_overview
+   overview/technical_architecture
    overview/accessing_enos
 
 .. toctree::

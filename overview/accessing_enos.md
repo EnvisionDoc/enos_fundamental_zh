@@ -1,21 +1,21 @@
-# Accessing EnOS™
+# 访问EnOS资源
 
-All functions of the EnOS™ Cloud are exposed as service APIs. Some of the functions are provided in the EnOS™ Console for you to access through a user-friendly graphical interface.
+EnOS的功能可通过EnOS开发者中心的控制台访问，也可通过服务API接口的形式访问。
 
-## EnOS™ APIs
+## EnOS API接口
 
-EnOS™ provides APIs for developers to add, delete, modify, and retrieve resources such as users, assets, and applications, to facilitate development of applications. EnOS™ adopts a variety of authentication and authorization techniques to ensure secure access to the APIs.
+EnOS为应用开发者开发API接口，可对用户账号、资产、应用等云端资源进行增删改等操作。EnOS采用了一些列身份认证和授权技术，以确保对API接口的安全访问。
 
-To access the EnOS™ APIs, you'll need to register the application that will invoke the APIs on EnOS™. The application can then access the APIs by presenting its application key and secret to be authenticated and authorized. For more information, see [Getting started with EnOS™ APIs](https://docs.envisioniot.com/docs/app-development/en/latest/EnOS™_apis/getting_started_EnOS™_apis.html) in the *Application Development* manual.
+调用EnOS API接口前，您需要在EnOS控制台注册应用，获取调用API所需要的应用账号和应用密钥，用于身份认证和授权。关于调用EnOS API接口的详细步骤，请参考[EnOS REST API 快速入门](https://docs.envisioniot.com/docs/app-development/en/latest/enos_apis/getting_started_enos_apis.html)。
 
-## EnOS™ Console
+## EnOS控制台
 
-EnOS™ Console is a web-based graphic interface for you to interact with resources in the EnOS™. The following figure shows a configuration interface in the EnOS™ Console.
+EnOS控制台是EnOS开发者中心提供的Web应用。通过EnOS控制台，您可与EnOS云端的资源进行交互。下图展示了EnOS控制台上的一个配置页面。
 
-![EnOS™ Console](media/EnOS™_console.png)
+![EnOS Console](media/enos_console.png)
 
-The user interface is mainly comprised of 3 parts:
+EnOS控制台页面主要由3部分组成：
 
-- Banner: Where you can click ![Menu](media/menu.png) to show or hide the navigation tree.
-- Navigation tree: Where you can access the entries to all functions of EnOS™ cloud. You can also customize your view of navigation tree by adding your most frequently used functions into favorites for quick access.
-- Configuration panel: Where you perform all configuration tasks around your data and resources on EnOS™ cloud.
+- 横幅：点击![Menu](media/menu.png)图标，即可显示或隐藏导航树。
+- 导航树：显示所有可访问的EnOS云端资源入口。可根据访问资源的频率，对导航树进行个性化配置，将经常访问的资源入口加入到**常用**标签下。
+- 配置面板：进入资源访问入口后，在控制面板上完成对EnOS云端的数据和资源进行配置。

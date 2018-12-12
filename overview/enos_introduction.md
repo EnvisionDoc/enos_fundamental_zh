@@ -1,59 +1,53 @@
-# EnOS™ Overview
+# EnOS 简介
 
-EnOS™ is THE AIOT operating system for enterprises and cities to accelerate digital transformation and ecosystem development. EnOS builds on top of open standards and best design to ensure it operates in an open eco-system.
+EnOS™是一个集成、安全、开放的智能物联网操作系统，帮助企业和城市加速数字化转型和生态系统建设。EnOS™建立在开放的标准和最佳设计之上，并持续在开放的生态系统中运行。
 
-**Extensive connectivity**
+**设备接入**
 
-Simplified ubiquitous connectivity based on rich protocol library.
-- EnOS™ supports direct device connections through the MQTT protocol and connections through the EnOS™ Edge or third-party edge products according to your business needs.
-- EnOS™ Edge supports a rich set of industry-standard protocols and some private protocols of mainstream IoT vendors. EnOS™ also provides toolsets to help you develop your own protocol.
+基于丰富的通信协议库，支持广泛的设备接入方案：
+- EnOS支持通过MQTT协议直连设备，也支持通过EnOS Edge或第三方网关设备连接设备，满足多种业务需求。
+- EnOS Edge支持多套行业标准协议和主流IoT供应商的私有协议。EnOS还提供工具集来帮助您开发私有协议。
 
-For more information, see [Device connection](https://docs.envisioniot.com/docs/device-connection/en/latest/deviceconnection_overview.html).
+关于设备接入的详细介绍，请参见 [设备接入概述](https://docs.envisioniot.com/docs/device-connection/zh_CN/latest/deviceconnection_overview.html)。
 
-**Deployment flexibility**
+**灵活部署**
 
-Enterprise-grade software stack with flexible deployment options (public, private, and hybrid cloud).
+EnOS提供企业级的软件栈，支持灵活的部署方案（公有云、私有云、混合云）。
 
-EnOS™ can operate in private cloud and public cloud hosting environment to enable clients to develop, run and operate their applications without handling the complexity of managing software stacks.
+用户可将EnOS部署在公有云或私有云环境中，无需管理复杂的软件栈，即可开发、运行、维护自有应用。
 
-EnOS™ can also be deployed in virtual private cloud (VPC) on public cloud hosting environment and private cloud without dependency on underlying hypervisors. you can also deploy the solution that best suits your requirements for cost, control, configurability, scalability, location and security.
+用户还可以将EnOS部署在公有云环境的虚拟私有云（VPC）或私有云环境中，而不依赖于底层管理程序；也可以根据自身对成本、控制、可配置性、可延展性、地理位置、安全等方便的要求部署最适合的解决方案。
+
+EnOS与大多数主流云服务商兼容，如Amazon AWS和Microsoft Azure。为保持最佳兼容性，EnOS公共集群仅依赖于所选云服务商的虚拟机和NFS服务。大部分EnOS核心物联网组件都是基于最新开源软件开发的，与虚拟机支持的常见操作系统环境完美兼容。EnOS云端与云服务商的管理接口相集成，支持现有集群的扩展和新集群的自动创建。
 
 
-**Domain expertise**
+**专业能力**
 
-Domain driven data architecture promised by rich experience with smart energy devices and scenarios.
+EnOS在智能能源设备和业务场景的丰富经验，确定了在专业领域的数据架构能力。
 
-Through extensive domain metadata, EnOS™ supports standardized data acquisition policies, ingestion rules, event handling rules, data retention policies, ODS schema, access control policies and data quality policies cross layer 3 to 5 in the 7-layer reference architecture, as illustrated in Figure 7.
-With configurable metadata mapping from the data source to the data target, this process will significantly reduce the effort required for data cleansing and normalization.
+基于大量的专业领域元数据，EnOS支持标准化的数据采集策略、数据采集规则、事件处理规则、数据保存策略、ODS原理、访问控制策略、以及数据质量策略。从数据源到数据目标的可配置元数据映射，显著减少了数据清理和标准化所需的工作。
 
-**Eco-system**
+**生态系统**
 
-Seamless integration with native and third-party applications, end-to-end tooling that empowers you to build your own platform.
+EnOS将自有应用与第三方应用无缝集成，提供端到端工具，帮助用户构建自有平台。
 
-EnOS™ allows users such as IoT engineers, data scientists, application developers, to perform operations such as managing devices and models, exploring data ingested from devices, configuring event triggering policies, rendering data analysis reports, and managing applications that are developed through the EnOS™ toolsets.
+物联网工程师、数据科学家、应用开发者可以通过EnOS平台管理设备和模型、开发设备数据、配置事件触发策略、生成数据分析报表、以及通过平台提供的工具开发和管理应用。
 
 <!--Need to add description about the end user, system admins and application users-->
 
 
-## Major components
+## 产品架构
 
-EnOS™ consists of the cloud side and edge side as shown in the following figure.
+EnOS由云端（EnOS Cloud）和边缘设备（EnOS Edge）组成，如下图所示：
 
-![EnOS™ architecture](media/architecture.png)
+![EnOS architecture](media/architecture.png)
 
-### EnOS™ Cloud
+### EnOS云端
 
-EnOS™ Cloud provides fundamental capabilities of model-based device asset
-management, data acquisition, stream data processing, batch data processing,
-custom event triggering and time-sequence data query service.
+EnOS云端提供基于模型的设备资产管理、数据收集、流式数据处理、批量数据处理、自定义事件触发规则、以及时序数据查询等基础能力。
 
-EnOS™ Cloud supports native EnOS™ Edge. If a 3rd party edge is required, EnOS™
-Cloud also supports 3rd party edges that are compatible with the EnOS™ device
-connection framework.
+对于设备接入，EnOS云端支持自有EnOS Edge；如果业务需要，也支持与EnOS设备接入框架兼容的第三方边缘设备。
 
-### EnOS™ Edge
+### EnOS Edge
 
-EnOS™ Edge provides capabilities of device data acquisition, device controlling,
-data normalization, and model-based real-time computing. The data communication
-channels between EnOS™ Edge and EnOS™ Cloud are secured by TLS/SSL protocol with
-dedicated X.509 certificate for each edge device and EnOS™ Cloud access point.
+EnOS Edge提供设备数据收集、设备控制、数据规范化、基于模型的实时计算等能力。EnOS Edge与云端通过TLS/SSL协议进行安全数据通信，每个边缘设备和EnOS Cloud接入点都有专用的X.509证书。
