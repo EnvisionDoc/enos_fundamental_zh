@@ -1,91 +1,86 @@
-# FAQs about batch data processing 
+# 大数据平台常见问题 
 
-The topic lists frequently asked questions about batch data processing.
+有关大数据平台的常见问题如下：
 
+## 问：任务实例日志保存时长是多少？
 
-## Q: How long will task instance logs be stored?
-
-A: In the data operation module, task instance logs will be stored for 15 days.
-
-
-
-## Q: What is the maximum number of lines of the task instance log?
-
-A: The limit of task instance log is 2000 lines. Download the log to view the complete local information.
+答：在数据运维模块，对于每一个任务实例，仅保留最近15日的运行日志。
 
 
 
-## Q: When creating a workflow and selecting "Import task config", the error message “workflow config not found” is reported. What are possible reasons?
+## 问：任务实例日志显示上限是多少行？
 
-A: In the imported task configuration package, the *workflow.config* file must be in the root directory of the package. That is, when compressing task configuration files, select all the configuration files and compress them directly. 
-
-
-
-## Q: When creating a data integration workflow, and the data source types are FTP, SFTP, and S3, can the column header contain Chinese characters?
-
-A: No, Chinese characters are not allowed in the column header, and the value of the column header must be the same with the number of columns of the file.
+答：任务实例日志的页面显示上限是2000行。可以通过下载日志到本地的方式，查看全部的日志。
 
 
 
-## Q: When creating a data integration workflow, and the data source type is S3, how to name the directories and files?
+## 问：新建任务流时，选择“导入任务配置”的方式，报错`workflow config not found`的原因是什么？
 
-A: When the data source type is S3, the directories and files should start with “s3://”, followed by the file path.
-
-
-
-## Q: When creating a workflow, which tasks or task nodes can be referenced as dependency and added to new tasks? 
-
-A: Only periodic tasks or task nodes can be referenced as dependency, and they can be root nodes only.
+答：被导入的任务配置压缩包，需保证`workflow.config`文件在一级目录中。即压缩任务配置文件时，需要先选择全部配置文件，然后直接压缩。
 
 
 
-## Q: When creating a workflow, what does "true" and "false" in relation mean?
+## 问：新建数据集成任务流，当数据源类型为FTP、SFTP、S3时，上传列头中允许包含中文吗？
 
-A: In a workflow, task nodes can be connected with relation. After connection, task nodes have dependencies at run time. The values "true" and "false" take effect only when the task is cascaded rerun. "true" means that downstream nodes will be executed during rerun, and "false" means that downstream nodes will not be executed. Double-click on the relation to change between "true" and "false". 
-
-
-
-## Q: When cloning a workflow, will the downstream dependency relationship of the workflow be copied?
-
-A: No, cloning a workflow will copy its commands, resources, configuration, and upstream dependency relationship, but not downstream dependency relationship. 
+问：上传列头时，不允许出现中文。且列头字段的数量需要与文件的列数保持一致。
 
 
 
-## Q: When creating a periodic scheduling workflow, what does "Specific Time" mean in node scheduling configuration? 
+## 问：新建数据集成任务流，当数据源类型为S3，目录或文件名应如何填写？
 
-A: "Specific Time" means scheduled task running time, which is consistent with the time of cloud servers. For the US and European environment, the time is UTC. For the China environment, the time is UTC+8.
-
-
-
-## Q: When creating a workflow, how to configure Crontab in scheduling configuration?
-
-A: A 7-digit Crontab is used in scheduling configuration. In general, Crontab specifies the exact time to trigger an event. For example, c1 (0 1 * * * ? *) defines triggering an event at 1min 0 second of each hour, and c2 (59 59 23 * * ? *) defines triggering an event at 23:59:59 every day. For details, refer to the Crontab web site at http://cron.qqe2.com/.
+答：当数据源类型为S3时，目录或文件名需要以`“s3://”`开头，然后再添加文件的具体路径。
 
 
 
-## Q: Is the timestamp of HDFS data file from device time or platform time? Will delayed records be discarded?  
+## 问：新建任务流，哪些任务或任务节点可以作为依赖被引用，添加到新的任务中？
 
-A: HDFS data are saved with a 1-hour frequency. Data file timestamp is from device time. Delayed upload records will be saved by device timestamp.
-
-
-
-## Q: Will files with the same name be overwritten when saving in S3?  
-
-A: Files with the same name will be overwritten by default. If S3 bucket versioning is enabled, a new data version will be generated. 
+答：只有周期任务流或任务节点，可以被添加为依赖，且只能作为根节点。
 
 
 
-## Q: In batch processing, is importing site/device master data supported for using master data property to filter device point value? 
+## 问：新建任务流，关联线的`true`和`false`代表什么？
 
-A: Yes. Description about "Synchronize master data" can be found through **Data Integration** > **General Library**. Master data can be imported to the Hive library for operations like *Join*.
-
-
-
-## Q: Does the master ID (mdmid) in the "Synchronize Master Data" SDK support multiple values? 
-
-A: No. Only one value is supported.
+答：同一个任务流中，不同任务节点可以通过关联线来连接，表示执行时的上下游依赖关系。`true`和`false`仅在任务重跑时生效。`true`表示任务流重跑时，下游节点也会被执行；`false`表示任务流重跑时，下游节点不会被执行。可以通过双击，来修改状态。
 
 
 
+## 问：克隆任务流，会复制该任务流原有的下游依赖关系吗？
 
+答：不会。克隆任务流，原任务流中的命令、资源、配置及上游依赖关系都会被复制。但是下游依赖关系，不会被复制。
+
+
+
+## 问：新建周期调度任务流，调度配置的“具体时间”指的是什么？
+
+答：“具体时间”指的是“计划运行任务时间“，与云端集群的服务器时间一致。对于美国和欧洲环境，服务器时间为UTC时间。对于中国环境，服务器时间为UTC+8。
+
+
+
+## 问：新建任务流，调度配置中如何配置`crontab`？
+
+答：调度中使用的是七位的Crontab，概括而言，Crontab可以指定某个事件在其指定的时间点被触发，比如：`c1 (0 1 * * * ? *)`定义了事件在每个小时的1分0秒触发，`c2 (59 59 23 * * ? *)`定义了事件在每天的23时59分59秒触发；Crontab更多配置请参考网站 <http://cron.qqe2.com/>。
+
+
+
+## 问：HDFS数据文件的时间戳是设备数据的时间还是平台生成数据的时间？如果有延迟上传的记录会不会被丢弃？  
+
+答：HDFS的数据1小时存一次，文件时间为设备的时间戳，延迟上传的记录按照设备时间插入。
+
+
+
+## 问：同名文件写入S3是会被直接覆盖吗？  
+
+答：默认覆盖同名文件。如果设置了桶的版本管理，会生成新的数据版本。
+
+
+
+## 问：批处理中是否支持引入场站/设备主数据，有用户场景需要通过主数据属性来过滤设备点值？ 
+
+答：支持。在“数据集成 > 通用库”中找到 “同步主数据”的说明和使用方法，就可以把想要的设备主数据导入到Hive库中，并做表之间的`Join`等操作。
+
+
+
+## 问：批处理通用库中的“主数据同步”SDK中的主数据ID (mdmid)支持多值吗？ 
+
+答：不支持，每次只能写一个值。
 

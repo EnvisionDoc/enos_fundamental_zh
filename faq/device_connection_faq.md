@@ -1,46 +1,47 @@
-# FAQs about device connection
+# 设备接入常见问题
 
-The topic lists frequently asked questions about device connection and EnOS Edge.
+有关设备接入和EnOS Edge的常见问题如下：
 
-## Q: What is the communication model between the Edge and cloud?
+## 问：Edge与云端之间的通信机制是怎样的？
 
-A: EnOS Edge communicates with EnOS Cloud (resource server) using a dynamic HTTPS (port 443) or HTTP (port 80) session. It is configurable to use either HTTPS or HTTP. Over this session, Over this session, EnOS Edge will download necessary resource packages to properly ingest, process, and transfer device telemetry. 
-
-
-
-## Q: Why does the resource package need to be updated? What are the requirements and process?
-
-A: The resource package includes asset data (like site information and device information), device model (like base model and child model), protocol jar file, point.csv file, mapping configuration file, and event rule configuration file.  Any modifications to these files (e.g. changes to device attribute) requires resource package updating operation. Usually, these configurations are frequently changes in the implementation phase, and the resource package will become relatively stable in the operation phase (except for some modifications in the maintenance phase). The frequency of resource package update depends on the project requirements.
-
-Resource package update is based on HTTP(s) protocol. Port 80 (HTTP) and port 443 (HTTPs) need to be open in both the cloud and the on-site edge.    
-
-If the resource package is hosted on an FTP server, it can be pushed to users. Users scan the package file and then copy it to an FTP server. The edge will get the package from the FTP server. 
+答：EnOS Edge与云端（资源服务器）通过动态HTTPS（443端口）或HTTP（80端口）通信。通过通信会话，EnOS Edge将从云端下载必要的资源包以收集、处理、和传输设备遥测数据。
 
 
 
-## Q: What are the requirements of remote control commands?
+## 问：为什么需要经常更新资源包？要求和流程是什么？
 
-A: Remote control commands are based on TCP protocol. Ports 8043 and 8099 need to be open in the cloud. If a project requires remote control command in the cloud, it will have inbound traffic. 
+答：资源包包含了资产数据，（如站点信息和设备信息）、设备模型（如基本模型和子模型）、协议JAR文件、point.csv文件、映射配置文件、和事件触发规则配置文件。对这些文件的任何修改（例如对设备属性的更改）都需要对资源包进行更新操作。通常，这些配置文件在实施阶段会经常变更，但在操作阶段将变得相对稳定（除了维护阶段的一些修改）。资源包更新的频率取决于项目需求。
 
+资源包更新是基于HTTP(S)协议的。端口80（HTTP）和端口443（HTTPS）需要在云端和Edge端都打开。
 
-
-## Q: What are the requirements of communication debugging and data flow monitoring?
-
-A: Communication debugging and data flow monitoring are based on TCP protocol. Ports 8043 and 8099 need to be open in the cloud.  
-
-The ping and telnet commands in the Configuration Center and the data flow monitoring function need inbound traffic. These functions are optional and designed to enable debugging and problem solving in the implementation and maintenance phases.
+如果资源包托管在FTP服务器上，则可以将其推送给用户。用户浏览资源包文件，然后将其复制到FTP服务器。Edge将从FTP服务器获取资源包。
 
 
 
-## Q: What is the Edge software update frequency?
+## 问：远程控制命令有什么要求？
 
-A: EnOS on-site Edge consists of several modules (execution environment, middleware, applications, and resource packages), which are updated once a month.   
+答：远程控制命令是基于TCP协议的。端口8043和8099需要在云端打开。
 
 
 
-## Q: Does MQTT topic support  wildcard?
+## 问：通信调试和数据流监控的要求是什么？
 
-A: Yes. For example:
+答：通信调试和数据流监控是基于TCP协议的。端口8043和8099需要在云端打开。
 
-- Multilayer wildcard (#): XXX/level1/level2/# supports receiving all topic messages below level 2.
-- Single layer wildcard (+): XXX/level1/level2/+ supports receiving all topic messages below the level under level 2. 
+配置中心中的ping和telnet命令以及数据流监控功能需要入站通信量。这些功能是可选的，并且被设计为能够在实施和维护阶段进行对设备进行调试和故障排查。
+
+
+
+## 问：Edge软件更新的频率是什么？
+
+答：站端EnOS Edge包括几个模块（执行环境、中间件、应用程序、和资源包），每个月更新一次。
+
+
+
+## 问：MQTT主题支持通配符吗？
+
+答：是的，MQTT主题支持如下通配符：
+
+- 多层通配符（#）：`XXX/level1/level2/#` 支持接收`level2`层级以下所有目录的主题消息。
+- 单层通配符（+）：`XXX/level1/level2/+` 支持接收`level2`层级下一层目录的主题消息。
+

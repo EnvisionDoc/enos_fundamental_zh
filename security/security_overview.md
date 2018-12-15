@@ -2,7 +2,7 @@
 
 物联网（IoT）为全球业务提供广泛的联系，帮助传统企业进行数字化转型，在降低运营成本的同时创造价值，提高生产效率，增加企业收入。
 
-然而，另一方面，物联网的安全性、隐私、道德、和守法对世界各地的企业来说是一个前所未有的巨大挑战。物联网解决方案融合了物理世界和数字世界，这也意味着潜在的攻击和风险可能同时发生。物联网也带来了更多关于隐私和道德的关注。企业必须关注数据的安全性，考虑谁有权访问何种资源，谁有权管理访问控制策略等等。
+然而，另一方面，物联网的安全性、隐私、道德、和合规对世界各地的企业来说是一个前所未有的巨大挑战。物联网解决方案融合了物理世界和数字世界，这也意味着潜在的攻击和风险可能同时发生。物联网也带来了更多关于隐私和道德的关注。企业必须关注数据的安全性，考虑谁有权访问何种资源，谁有权管理访问控制策略等等。
 
 因此，与传统软件开发和实施的网络安全需求相比，安全的IoT解决方案需要对整个数据旅程的保护、防御、和治理，包括设备的安全接入、设备和云端之间的安全通信、云端的安全数据处理和存储、安全的应用程序开发等。
 
@@ -12,87 +12,88 @@
 
 EnOS管理超过100兆瓦的客户能源资产，其中的大部分是全球大型能源企业。可靠的安全实施和原则是EnOS设计的核心，以确保客户的系统和数据的安全、隐私、合规始终得到维护。
 
-EnOS利用全球领先的云服务供应商的安全基础设施的优势来维护云端安全和数据隐私，例如客户操作系统补丁维护、防火墙配置、灾备等。EnOS的网络安全也由全球领先的供应商提供的网络基础设施保护，包括虚拟私有云（VPC），限制接入点、基于规则的网络流量、IPsec VPN等。为保护数据的安全传输，应用程序必须通过HTTPS或TLS调用EnOS REST API接口，设备和EnOS Edge可以通过TLS保护的数据通道连接到EnOS云端。
+EnOS利用全球领先的云服务供应商的安全基础设施的优势来维护云端安全和数据隐私，例如客户操作系统补丁维护、防火墙配置、灾备等。EnOS的网络安全也由全球领先的供应商提供的网络基础设施保护，包括虚拟私有云（VPC）、限制接入点、基于规则的网络流量、IPsec VPN等。为保护数据的安全传输，应用程序必须通过HTTPS或TLS调用EnOS REST API接口，设备和EnOS Edge可以通过TLS保护的数据通道连接到EnOS云端。
 
 EnOS提供安全的边缘设备、安全的设备连接、安全的数据存储等服务。下文详细介绍EnOS在4个领域的安全保护措施。
 
-## Secure Edge
+## 安全的边缘设备
 
-Each EnOS edge has a unique indentity key which can be used by the IoT Hub to communicate with the edge while it is in operation.The key with a user-defined edge ID forms the basis of a token and a signature used in communication between the edge and the IoT Hub. These edge IDs can use an existing fixed identity such as serial number, network MAC address which is not simple to be changed. The edge IDs are managed by _edge device provisioner_ in the IoT Hub via EnOS console or APIs. The IoT Hub provides secure storage of edge identities and secret keys.
+每台EnOS Edge设备都有一个唯一的身份密钥，EnOS云端可以在Edge运行时使用该密钥与它通信。该身份密钥与用户自定义的Edge ID组成了与云端通信时需要的令牌和签名的基础。Edge ID可以是现成的固定标识，例如设备序列号、网络MAC地址等不容易更改的标识。Edge ID由EnOS云端的边缘设备接入器通过EnOS控制台或API接口管理。EnOS云端为Edge ID和密钥提供安全的存储保障。
 
-EnOS edge has built-in firmware/software upgrade feature to ensure that critical patches against security vulnerabilities can be applied manually or automatically. Any changes or firmware/software upgrades applied to edges will be logged at the cloud side for auditing.
+EnOS Edge具有内置的固件/软件升级特性，以实现手动或自动升级关键安全漏洞补丁。应用于Edge的任何更改或固件/软件升级都将在云端记录以进行后续审核。
 
-Unused USB ports are disabled by default to prevent malicious access. Only network ports used by necessary applications and services are enabled by network policies explicitly.
+未使用的USB端口会被默认禁用以防止恶意访问。网络策略仅允许启用必要的应用程序和服务使用的网络端口。
 
-Some type of EnOS edges are manufactured with TPM chips. EnOS may utilize this hardware feature to store the client certificate securely.
+某些型号的EnOS Edge设备是用TPM芯片制造的。EnOS可以利用这个硬件特性安全地存储客户端证书。
 
-## Secure Connectivity
+## 安全的设备连接
 
-EnOS edge and other compatible edge devices communicate with EnOS cloud via TLS protected data tunnel. X.509 certificate based bi-directional authentication is enforced for each session. To ensure that each edge has its exclusive client certificate, the certificate request exchange is performed by edge during its first power-on procedure. Edge device generates public certificate request containing unique device identifier (e.g., serial number, network MAC address) and corresponding private key according to PKI standard. Certificate request will be forwarded to EnOS certification service or public-trusted CA for sign. Later, issued public certificate will be sent back to edge device, to be stored together with private key locally.
+EnOS Edge或其它兼容的边缘设备与EnOS云端通过TLS保护的数据通道进行通信。每个会话都强制执行X.509基于证书的双向认证。为了确保每个Edge设备具有其独有的客户端证书，证书请求由Edge设备在其第一次开机时执行。Edge设备根据PKI标准生成公钥证书请求，其中包含唯一的设备标识符（序列号或网络MAC地址）和相应的私钥。证书请求被转发到EnOS认证服务或受公众信任的CA进行签名。之后，下发的公钥证书将被发送回Edge设备，与私钥一起存储于本地。
 
-To ensure secure connections from the devices and end users to the EnOS portal, HTTP over TLS is applied for data transmissions, which uses public-key cryptography to prevent eavesdropping, tampering, and forgery.
+为了确保从设备和终端用户到EnOS云端的安全连接，数据传输时应用TLS协议，通过使用公钥加密来防止窃听、篡改和伪造数据。
 
-Devices and end users can establish secure communication sessions to API endpoints that EnOS services provide. HTTPS is used for accessing the REST APIs.For the TLS protected data channel between the devices and EnOS cloud, X.509 certification based bidirectional authentication is adopted, all data is encrypted during transmission.
+设备和终端用户调用EnOS提供的API接口时，是基于HTTPS协议来调用的。设备与EnOS云端之间的TLS保护数据通道，采用X.509基于证书的双向认证，所有数据传输时都经过加密。
 
 
-## Secure Cloud and Data
-EnOS takes famous IaaS verdors as its cloud infrastructure providers. The IaaS vendor is responsible for protecting the global infrastructure that hosts all services provisioned in the cloud. The infrastructure is comprised of the hardware, software, networking, and facilities that run the cloud services. For these managed cloud services, the IaaS vendor manages basic security operations such as guest operating system patching, firewall configuration, and disaster recovery.
+## 安全的云端和数据
+EnOS采用著名的云服务商作为基础设施供应商。基础设施供应商负责确保托管在云端的所有服务的安全性。基础设施由硬件、软件、网络、以及运行云服务的设施组成。对于这些托管的云服务，基础设施供应商管理基本的安全操作，如为客户操作系统打补丁、防火墙配置、和灾备等。
 
-From the security perspective, adopting an IaaS vendor brings the following benefits:
-- Industry-standard security compliance.
-- State-of-the-art physical and environmental security solutions.
-- High availability, which promotes business continuity.
-- World-class secure network infrastructure with focus on manageability and monitoring.
-- Mature change management process.
+从安全性的角度来看，采用云服务供应商有如下优势：
 
-The data centers where EnOS is hosted are state of the art, secured by innovative architectural and engineering approaches:  
-- The data centers are housed in nondescript facilities.
-- Physical access is strictly controlled at both the perimeter and the building ingress points by professional security staff who utilizes video surveillance, intrusion detection systems, and other electronic means to enforce security.
-- An authorized staff must pass two-factor authentication for a minimum of two times to access the data center.
+- 行业标准安全合规
+- 先进的物理和环境安全解决方案
+- 高可用性，确保业务连续性
+- 世界级的安全网络基础设施，易于管理和监控
+- 成熟的变更管理流程
 
-EnOS adopts a very strict mechanism for protecting data at rest. Sensitive data, defined by built-in and custom rules, is encrypted before putting into files or databases. Data is encrypted with keys exclusive to the customers that are generated by EnOS or provided by clients. Decryption happens automatically when data is retrieved through the EnOS API. Therefore, no intruders or platform operators will have access to the data even when they have access to the underlying file system or database systems.
+托管EnOS的数据中心采用最先进的安全创新体系结构和工程方法：
+- 数据中心所处的设施不被外界所知。
+- 数据中心周边和建筑物入口都由专业安全人员严格控制，由视频监视、入侵检测系统、和其它电子手段实施安保。
+- 授权人员也必须至少两次通过双因子身份验证才能访问数据中心。
 
-Within EnOS, data (such as files, database) belonging to different clients (a.k.a. “OU”) are stored separately or segmentally. Logical data segmentation is established in all underlying components of EnOS. In the EnOS big data storage system, all files, tables, and other types of data are secured by access control, although data from different clients are stored physically in a single cluster. Only authorized user may access data with audit-enabled API calls or command tools. This mechanism not only promotes the security of data, but also makes it possible to share data among different clients without extra storage cost.
+EnOS采用非常严格的机制来保护静态的数据。敏感数据由内置和自定义规则定义，在存入文件或数据库之前会被加密。数据是由EnOS或客户提供的客户专用密钥加密的。当通过EnOS API检索数据时，数据会被自动解密。因此，即使有入侵者或平台操作员能访问底层文件系统或数据库系统，数据也不会被窃取。
 
-In addition, EnOS also has capability of providing dedicated storage for those clients with highly sensitive data, to meet the requirement of some special scenarios.
+在EnOS云端，属于不同客户（也可称为组织）的数据（文件或数据库）被单独或分段地存储。在EnOS的所有底层组件中都建立了逻辑数据分割。在EnOS大数据存储系统中，尽管不同客户的数据都保存在单独的物理集群中，所有文件、数据库表、以及其他类型的数据都由额外的访问控制保护。只有授权用户可以通过经身份认证的API调用或命令工具来访问数据。这种机制不仅提高了数据的安全性，而且允许在不同客户之间共享数据而不需要额外的存储成本。
 
-## Secure Application
+此外，EnOS还可以为拥有高度敏感数据的客户提供专用存储服务，以满足一些特殊场景的需求。
 
-While the underlying IaaS secures the physical venues, network, operating systems, and managed services. EnOS secures the applications that are hosted on the platform, including applications that manage massive IoT assets .
+## 安全的应用程序
 
-EnOS secures applications through the following means:
-- Identity and Access Management
-- Network protection
-- Data encryption
-- Logging and Monitoring
-- Security Auditing
+基础设施服务商为物理场所、网络、操作系统等提供了有效防护，EnOS为平台上托管的应用程序提供安全保障，包括管理大量IoT资产的应用程序。
 
-#### Identity and Access Management
-Identity and Access Management (IAM) enables you to create and manage permissions for EnOS resources. IAM unifies access control for Cloud Platform services into a single system and presents a consistent set of operations. EnOS applies the IAM scheme to support multi-tenancy, where each tenant in EnOS is managed as an organizational unit. Data that belongs to different organizations are securely segregated and can only be accessed by users that are registered to the organization.
+EnOS在以下方面为应用程序提供安全防护：
+- 身份和访问控制
+- 网络防护
+- 数据加密
+- 日志与监控
+- 安全审计
 
-EnOS’ built-in IAM schemes provide capabilities of identity management, authentication, authorization, and auditing.
+#### 访问控制
+通过访问控制服务（IAM）创建和管理EnOS资源的权限。IAM将云平台服务的访问控制统一到单个系统中，并提供了一致的操作方法。EnOS应用IAM方案支持多租户，将每个租户作为一个组织单元进行管理。不同组织的数据被安全地分别保存，只有组织内注册的用户才能访问组织的数据。
 
-#### Network Protection
-EnOS hosts several automated monitoring tools to detect abnormal and unauthorized activities and situations at ingress and egress points. These tools monitor the server and network usage, port scanning activities, application usage, and unauthorized intrusion attempts. The tools allow custom performance metric thresholds to be set for abnormal activities.
+EnOS内置的访问控制方案为客户提供身份管理、身份认证、访问授权、和审计的能力。
 
-#### Data Encryption
-Sensitive data, defined by built-in and custom rules, is encrypted before being put into files or databases. Decryption happens automatically when data is retrieved through the EnOS API.
+#### 网络防护
+EnOS运行若干自动监控工具，用于检测入口和出口点的异常情况和未经授权的活动。这些工具对服务器、网络使用情况、以及未经授权的入侵进行监控。这些工具支持对监控异常活动设置自定义的性能度量阈值。
 
-#### Logging and Monitoring
-Centralized logging service in EnOS is configured to aggregate activity logs and show security related metrics at the real-time.
+#### 数据加密
+敏感数据由内置和自定义规则定义，在存入文件或数据库之前会被加密。当通过EnOS API检索数据时，数据会被自动解密。
 
-EnOS logs all user activities to the portal and API invocations.The activity log contains details about each access request including the request type, requested resource, requestor’s IP, and the date and time of the request. Alerts are triggered when defined thresholds are exceeded.
+#### 日志与监控
+EnOS提供统一的日志记录服务统计各类活动日志，并实时显示与安全相关的数据。
 
-#### Security Auditing
-Accounts with proper privileges may access authorized resources via EnOS service APIs and portal. Access validation is performed for each access attempt. Success or failure attempts are recorded in IAM logs for auditing and abnormality detection purposes.
+EnOS记录用户通过EnOS门户和API访问系统的所有活动。活动日志包含关于每个访问请求的细节，包括请求类型、请求的资源、请求者的IP、以及请求的日期和时间。当超过定义的阈值时即触发告警。
 
-## Conclusion
-Security is integrated into every aspect of EnOS. EnOS offers you unique security advantages derived from protect, governance and defense for the IoT Security, privacy and ethics, and compliance.
+#### 安全审计
+拥有适当权限的帐户可以通过EnOS服务API和EnOS门户访问授权资源。EnOS对每个访问尝试执行访问验证，成功或失败的访问尝试都会记录在IAM日志中，以便进行安全审计和异常检测。
 
-Modern applications are continuously moving to the cloud because the cloud not only provides scalability, high performance and reliability, but also provides very high security standard.
+## 总结
+EnOS在每个业务环节都采用了集成的安全防护技术。EnOS为您提供了独特的在安全方面的优势，这些优势来源于对物联网业务安全、隐私、道德、合规的有效保护、治理、和防御。
 
-Compared to the traditional application hosted in the clients’ own data center, whose security completely relies on the clients, the security responsibilities of the cloud applications are shared across the cloud infrastructure provider, the cloud application platform and the clients.
+现代应用程序正在不断地向云端转移，因为云计算不仅提供了可扩展性、高性能、和可靠性，而且还提供了非常高的安全标准。
 
-The IaaS vendor is responsible for the industrial compliance, the physical and environmental security, the network security, the operating system security and the storage security. EnOS, as the IoT PaaS, is responsible for adopting the best security practices for authentication, access control, network protection, data encrypting, activity logging and auditing to secure clients’ data and applications.
+托管在用户自有数据中心的传统应用程序的安全完全由用户自己维护，与之相比，云应用程序的安全由云服务供应商、云应用平台、和用户共同维护。
 
-EnOS has taken security seriously and carefully considers all security aspects with substantial web application security experience. EnOS will continue to help our clients make a sound decision on the IoT platform to protect the confidentiality, integrity, and availability of their devices and data.
+云服务供应商负责行业兼容性、物理和环境安全、网络安全、操作系统安全、和数据存储安全。EnOS作为物联网平台，负责采用身份认证、访问控制、网络保护、数据加密、活动日志记录、和安全审核等最佳安全实践来保护客户的数据和应用安全。
+
+EnOS非常重视安全性，以丰富的Web应用程序安全经验仔细考虑所有涉及安全的各方面。EnOS将继续帮助我们的客户在保护他们的设备和数据的机密性、完整性、和可用性方面做出合理的决定。

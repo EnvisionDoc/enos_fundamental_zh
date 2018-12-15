@@ -1,31 +1,34 @@
-X.509 Certificate Service in EnOS
-=================================
+X.509 证书服务
+=================
 
-EnOS provides the X.509 Certificate Service to enforce X.509 certificate-based bi-directional authentication for all communication sessions between the EnOS Edge and IoT Hub.
+EnOS提供X.509证书服务，对EnOS Edge和IoT平台之间的所有通信会话强制执行基于X.509证书的双向身份验证。
 
-In cryptography, X.509 is a standard that defines the format of the public key certificate, which is an electronic document used to prove the ownership of a public key. X.509 certificate is defined by the `RFC5280 <https://tools.ietf.org/html/rfc5280>`__ standard. X.509 certificates are issued by a trusted entity of Public-key Infrastructure (PKI) called Certification Authority (CA).
+在密码学中，X.509是定义公钥证书格式的标准，它是用于证明公钥所有权的电子文档。X.509证书由 `RFC5280 <https://tools.ietf.org/html/rfc5280>`__ 标准定义。X.509证书由证书颁发机构(CA)颁发，它是公钥基础设施(PKI)工作组的可信实体。
 
-Certificate-based authentication has the following benefits over other identification and authentication mechanisms.
+基于证书的认证与其它身份认证机制相比，有如下优点：
 
-- Asymmetric keys, which ensure that sensitive cryptographic material never leaves the devices
+- 非对称密钥，确保敏感密码永远不会脱离设备
 
-- Stronger client authentication
+- 更强的客户端身份验证
 
-There are several concepts you need to know before you start to use the X.509 Certificate Service:
+在使用X.509证书服务前，需要了解如下相关概念：
 
-- **Public-key Infrastructure (PKI)**, is a set of roles, policies, and procedures that are needed to create, manage, distribute, use, store, and revoke digital certificates and manage public-key encryption.
-- **Certification Authority (CA)**, is an entity that issues digital certificates.
-- **Certificate signing request (CSR)**, is a message sent from the certificate applicant to the certificate authority to apply for an X.509 certificate.
-- **Certificate Revocation List (CRL)**, is a time-stamped list that maintains the revoked certificates of the CA.
+- **Public-key Infrastructure (PKI)**：公钥基础设施，是创建、管理、分发、使用、存储、和撤销数字证书以及管理公钥加密所需的一组角色、策略、和过程。
 
-EnOS X.509 Certificate Service provides the following functions:
+- **Certification Authority (CA)**：数字证书颁发机构。
 
-- Retrieving root CA certificate
-- Retrieving certification revocation list
+- **Certificate signing request (CSR)**：证书签名申请，是证书申请人向证书颁发机构发送的申请X.509证书的消息。
 
-Therefore, IoT hub can get and revoke X.509 certificates for securing the communication between devices and the cloud.
+- **Certificate Revocation List (CRL)**：证书撤销列表，是一个带有时间戳的列表，用于维护撤销的CA证书。
 
-There functions are available through REST APIs in IoT hub.
+EnOS X.509证书服务提供如下功能：
+
+- 获取CA根证书
+
+- 获取证书撤销列表
+
+
+因此，物联网平台可以获取和撤消X.509证书，以确保设备和云端之间的通信安全。这些功能通过EnOS REST API服务接口提供。
 
 .. toctree::
    :maxdepth: 1

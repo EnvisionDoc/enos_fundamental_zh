@@ -1,28 +1,26 @@
-# How to get root CA certificate and CRL
+# 获取CA根证书和证书撤销列表
 
-The APIs to get root CA certificate and CRL are open to public.
+EnOS提供开放的API接口，用于获取CA根证书和证书撤销列表。
 
-The following two APIs are relative to `https://<enos_cluster_hostname>`, where `https://<enos_cluster_hostname>` refers to the hostname of the EnOS cloud cluster instance. EnOS cloud cluster has the following instances:
+获取CA根证书和证书撤销列表的API接口，可通过以下EnOS网关地址：
 
 - AWS-CN: `https://developer.envisioncn.com`
 - DECADA: `https://portal-decada1.envisioniot.com`
 
-## Retrieving root CA certificate
+## 获取CA根证书
 
-A root CA certificate is a certificate with the public key of the current CA. The root certificate is used to check the validity of an issued certificate.
-
-To retrieve the root CA certificate, send the following API request:
+CA根证书是具有当前CA的公钥的证书。根证书用于检查颁发的证书的有效性。可通过调用以下API接口来获取CA根证书：
 
 ```
 GET /enos/CA/cacert
 ```
 
-## Retrieving certificate revocation list
+## 获取证书撤销列表
 
-A revoked certificate is identified in the certificate revocation list (CRL) by its certificate serial number. To check whether a certificate is revoked, you'll need to retrieve the CRL and check whether the corresponding certificate serial number is on that CRL. To retrieve the CRL, call the following API periodically.
+在证书撤销列表（CRL）中，通过证书序列号来标识被撤销的证书。可通过获取CRL并检查相应的证书序列号是否在CRL中，来确定证书是否被撤销。定期调用以下API接口来获取证书撤销列表：
 
 ```
 GET /enos/CA/crl
 ```
 
-**Note**: The EnOS X.509 Certificate Service refreshes CRL at 00:00 am every day.
+注意：EnOS X.509证书服务每天早上00:00刷新证书撤销列表。

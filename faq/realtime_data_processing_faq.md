@@ -1,20 +1,20 @@
-# FAQs about real-time data processing 
+# 流式计算常见问题 
 
-The topic lists frequently asked questions about real-time data processing.
-
-
-## Q: What is uuid in streaming computing? How to retrieve it?
-
-A: uuid is also known as mdmid, which can be retrieved by getDeviceID() or DevicelCal(). 
+有关流式计算的常见问题如下：
 
 
+## 问：流式计算中的uuid代表什么？通过哪个方法可以获取到？
 
-## Q: How are the uploaded data points saved in TSDB?
-
-A: There are 2 tables. One saves the uploaded data only. A forced data storage will be triggered if there is no data change within 1 hour. The other saves sampling data by a 1-minute frequency. To query the ingested data within 1 minute, set the interval value of the *Sample_data* parameter.
+答：uuid 也被称为 mdmid, 可以通过流式计算中的getDeviceID() 接口或者 DevicelCal() 接口获得。
 
 
 
-## Q: Can data in TSDB be deleted?
+## 问：流式计算的TSDB中针对变位上传的数据点是怎么存储的？
 
-A: No. Data in TSDB can be covered only, through streaming computing write operation. Data coverage is an unconventional operation, which is not recommended.
+答：存储数据有2张表，一张表只存储变位上传的数据，如果超过1h不变位会强制存储一次；第二张表，按照1min的频率采样存储。通过设置Sample_data的interval参数可以查询到1min采样的数据。
+
+
+
+## 问：TSDB中的数据是否支持删除？
+
+答：不支持。TSDB 中的数据只支持覆盖，可以通过写流计算的方式覆盖。覆盖数据是非常规操作，不推荐用户使用。

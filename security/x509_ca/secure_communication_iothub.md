@@ -1,81 +1,81 @@
-# Best practice for securing communications between edge gateways and EnOS IoT Hub with X.509 certificates
+# 使用X.509证书最佳实践
 
-Security is a critical in an IoT system. EnOS enforces the following security schemes for secure the connection between the edge gateway and EnOS IoT Hub:
+安全在物联网系统中至关重要。EnOS推行以下安全方案来保护边缘网关设备和EnOS物联网平台之间的连接：
 
-- The communications between the edge gateway and EnOS IoT Hub are enfored to use certificate-based bi-directional authentication.
-- Support for RSA algorithm to verify signature, with enforcement for 2048 bits.
-- The resource on EnOS is segregated and the API access permissions are controlled by IAM, for more information, see [IAM overview](https://docs.envisioniot.com/docs/iam/en/latest/iam_overview.html).
+- 边缘网关设备和EnOS物联网平台之间的通信必须使用基于证书的双向认证。
+- 支持RSA加密算法验证签名，并强制要求2048位长。
+- EnOS云端的资源被隔离保存，并且API访问权限由IAM控制，详见[IAM简介](https://docs.envisioniot.com/docs/iam/zh_CN/latest/iam_overview.html)。
 
-## Setup phase
+## 配置阶段
 
-The following diagram illustrates the process of secure communication between the edge and IoT Hub based on X.509 certificates:
+下图说明了基于X.509证书的Edge设备和IoT平台之间的安全通信过程：
 
 ![image](../media/certificate_service_secure_communication_01.png)
 
-### 1. IoT Hub acquires X.509 certificate
+### 1. IoT平台获取X.509证书
 
-1a. The IoT Hub creates key pairs and CSR locally, acquires the X.509 certificate with the CSR by using the X.509 Certificate Service API.
+1a. IoT平台在本地创建私钥对和证书签名申请，通过X.509证书服务API接口获取X.509证书。
 
-1b. The EnOS CA issues the X.509 certificate and sends the certificate to the IoT Hub.
+1b. EnOS CA颁发X.509证书，并将证书发回到IoT平台。
 
-1c. The IoT Hub receives and stores the X.509 certificate.
+1c. IoT平台接收并保存X.509证书。
 
 ![image](../media/certificate_service_secure_communication_02.png)
-### 2. Edge acquires X.509 certificate
+### 2. Edge获取X.509证书
 
-2a. *The device provisioner* provisons the edge with neccesary information such as product key, product secret, serial number, and license. The provisioner uses these parameters to create the device in the IoT Hub.
+2a. 设备接入器通过提供Edge设备的信息，如产品ID、产品秘密、序列号、和许可证等，在IoT平台创建设备。
 
-2b. The IoT Hub verifies the identity of the edge and creates the device instance in the Hub, responds to Edge with the Globally Unique Identifier (GUID) of the device and the device secret.
+2b. IoT平台验证Edge设备的身份信息之后，在平台创建设备实例，并返回设备的全局唯一标识符（GUID）和设备密钥。
 
-2c. The edge receives the responses from the IoT Hub, creates key pairs and CSR, calls the API to activate the device, and gets its X.509 certificate.
+2c. Edge设备接收IoT平台返回的信息，创建私钥对和证书签名申请，调用API接口激活设备并获取X.509证书。
 
-2d. The IoT Hub receives the request from the edge, after verifing its identity, activates the device and forward the CSR to the EnOS CA.
+2d. IoT平台接收Edge设备的请求，完成身份验证之后，激活设备并将设备证书签名申请转发到EnOS CA。
 
-2e. The EnOS CA receives the CSR, issues the certificate and responds to the IoT Hub.
+2e. EnOS CA接收到设备的证书签名申请之后，颁发证书并将证书返回到IoT平台。
 
-2f. The IoT Hub receives the issued X.509 certificate, binds it with the device id, and then sends the certificate to the edge.
+2f. IoT平台接收到颁发的X.509证书之后，将证书与设备ID绑定，并将证书发送到设备。
 
-2g.The edge receives the issued X.509 certificate, saves it securely in the local repository.
+2g. Edge设备接收颁发的X.509证书，并将证书安全地保存到本地存储库中。
 
-## Communication phase
+## 通信阶段
 
-The diagram below illustrates the certificate-basd authentication process and the revocation process:
+下图说明了基于证书的身份验证过程和证书撤销过程：
 
 ![image](../media/certificate_service_secure_communication_03.png)
 
-### 3. Edge commmunicates with the IoT Hub using the certificate-based bi-directional authentication
+### 3. Edge设备与IoT平台之间通过基于证书的双向认证进行通信
 
-3a. The edge validates the certificate of the IoT Hub.
+3a. Edge设备验证IoT平台的证书。
 
-3b. The IoT Hub validates the certificate of the edge.
+3b. IoT平台验证Edge设备的证书。
 
-When the TLS handshake in step 3a and 3b succeeds, the TLS connection is established between the edge and the IoT Hub.
+当通过步骤3a和3b的TLS握手成功之后，Edge设备与IoT平台之间建立起TLS连接。
 
-3c. The edge transmits device telemetry through MQTT over the TLS connection.
+3c. Edge设备通过建立的TLS连接，将设备遥测数据通过MQTT协议上传到IoT平台。
 
-3d. The IoT Hub transmits configurations and control signals through MQTT over the TLS connection.
+3d. IoT平台通过建立的TLS连接，将配置信息和控制信号通过MQTT协议下发到Edge设备。
 
 
 ![image](../media/certificate_service_secure_communication_04.png)
-## Revocation phase
+## 撤销证书
 
-Under some circumstances, the *device provisioner* needs to revoke the X.509 certificate of the edge.
+在特定情况下，设备接入器需要撤销Edge设备的X.509证书。
 
-### 4. The IoT Hub revokes the X.509 certificate of the Edge
+### 4. IoT平台撤销Edge设备的X.509证书
 
-4a. The IoT Hub calls the revocation API to revoke the X.509 certificate with the serial number of the certificate.
+4a. IoT平台通过调用证书撤销接口，传入证书序列号，申请撤销X.509证书。
 
-4b. The EnOS CA receives the request from the IoT Hub, verifies the identity, revokes the certificate, and update the CRL.
+4b. EnOS CA接收IoT平台的申请，验证身份，撤销证书，并且更新证书证书撤销列表。
 
-## Edge security best practices
+## 边缘设备安全最佳实践
 
-In the certificate-based security connection, consider the following best practices to secure the edge:
+在基于证书的安全连接过程中，考虑采用以下最佳实践来办证Edge设备的安全：
 
-- Create the private key for the edge and keep it secret in a storage such as TPM.
-- Use TLS 1.2 when communicating with the IoT Hub, and verify that the server certificate is valid.
-- Each edge must have a unique public/private key pair.
-- The key pair used to be authenticated by IoT Hub should not be used for other purposes or communications through other protocols.
-- The key must be revoked when the edge is reset.
-- When your edge runs on an operating system, make sure your operating system is secured through certain machanisms, for example, firewall.
-- Ensure that you have a way to update root CA certificates and CRL.
-- Ensure that the clock on the edge is not tampered with.
+- 为Edge设备创建的私钥，并将其保密在诸如TPM的存储器中。
+- 与IoT平台的通信过程中使用TLS 1.2协议，并验证服务器证书是否有效。
+- 每台Edge设备必须具有单独的公钥/私钥对。
+- 用于在IoT平台上进行身份验证的密钥对不应用于其他目的，或通过其他协议进行通信。
+- Edge设备重置时，密钥必须被撤销。
+- 当Edge设备运行于某种操作系统上时，确保操作系统通过某些安全机制（例如，防火墙）受到保护。
+- 确保CA根证书和证书撤销列表可被更新。
+- 确保Edge设备的时钟不可被篡改。
