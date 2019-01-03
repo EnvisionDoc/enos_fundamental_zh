@@ -1,114 +1,115 @@
-# EnOS™ Glossaries
-
+# EnOS™ 术语表
 ## A
 
-### access policy
+### access policy - 访问策略
 
-In IAM, a policy is a collection of access rules. An organization administrator may assign one or more policies to a user.
+在IAM中，策略是一组权限访问规则的集合。组织管理员可将一个或多个策略分配给IAM用户。
 
-### access rule
+### access rule - 访问规则
 
-In IAM, an access rule refers to a user's operational permission to an EnOS™ resource.
+在IAM中，指用户对一项EnOS资源的操作权限。
 
-### asset
+### asset - 资产
 
-An asset is an instance of a model, which can either be one device or a combination of devices.
+资产是模型的实例，资产可以是一个设备，也可以是设备的组合。
 
-### asset tree
+### asset tree - 资产树
 
-An asset tree of an enterprise is formed through hierarchical topology.
+资产与资产通过层级拓扑结构，组成了企业的资产树结构。
 
-### attributes
-An attribute is a static description of a device. A static attribute allows the user to customize its name as well as the corresponding identifier. The name is equivalent to a description that allows Chinese input(e.g., longitude).
+### attributes - 属性
+
+属性是设备的静态描述信息。静态属性允许用户自定义属性的名称以及标识符，名称相当于是一个描述，允许中文输入，比如经度。
 
 ## B
 
-<h3><a name="batch_computing">batch computing</a></h3>
+<h3><a name="batch_computing">batch computing - 批量计算</a></h3>
 
-Batch computing is a way of data processing (usually limited data processing), typically using a file system as its data source. It takes data blocks as processing units, and each computing job receives the data block of a certain size and processes them, and then sends the processed intermediate data downstream. Batch computing jobs are short tasks that are closed after processing a batch of data to which they are assigned.
+批量计算是一种数据处理方式，通常是处理有限数据，一般以文件系统作为数据源。它以数据块为处理单位，每个计算任务接收一定大小的数据块并处理完成后，才将处理好的中间数据发送给下游。批量计算任务都是短任务，在处理完其负责的一批数据后即关闭。
 
 ## C
 
-### custom resources
-Custom resources are additional resources an organization needs to purchase or apply for.
+### custom resources - 自定义资源
+
+即组织需额外购买或申请的资源。
 
 ## D
 
-### DAG
+### DAG - 有向无环图
 
-A directed acyclic graph is a directed graph with no loops. It consists of a finite number of vertices and directed edges, with each directed edge pointing from one vertex to another. And, starting from any of the vertices, you cannot return to the same vertex through these directed edges.
+有向无环图是指一个无回路的有向图。它由有限个顶点和有向边组成，每条有向边都从一个顶点指向另一个顶点，并且从任意一个顶点出发都不能通过这些有向边回到该顶点。
 
-### dashboard
+### dashboard - 数据报表
 
-A dashboard is a form of visual presentation of data. In EnOS™, reports can be prepared using the reporting tool to drag and drop charts or controls. Multiple types of analytical charts and controls may be included in the reports, and such operations as filtering, screening and associated queries are supported.
+数据报表是可视化呈现数据的一种形式。在EnOS中，报表可通过报表工具以拖拽图表或控件的方式搭建完成。报表中可以包含多种类型的分析图表和控件，并支持对数据进行过滤、筛选及关联查询等操作。
 
-### data development
+### data development - 数据开发
 
-Data development refers to a series of data computing processes (including data generation, collection and storage, data analysis and processing, data extraction and display, etc.) designed based on specific business needs. These computing processes are implemented as one or more scheduling jobs, and processing results are executed and output through a scheduling system.
+根据业务需求设计的一系列数据计算流程（该流程包括数据的产生、收集与存储、数据分析与处理、数据提取及展示等），并将这些计算流程实现为一个或多个调度任务，通过调度系统执行并产出数据处理结果。
 
-### data explorer
+### data explorer - 数据探索
 
-Data explorer is a tool provided by EnOS™ for visualizing interactive data analysis, and for querying, analyzing, and visualizing data.
+数据探索是EnOS提供的用于可视化交互式数据分析的工具，对数据进行查询、分析、及可视化展示的过程。
 
-### data integration
+### data integration - 数据集成
 
-Data integration is a tool provided by EnOS™ for data synchronization.
+数据集成是EnOS提供的用于数据同步的工具。
 
-### data synchronization
+### data synchronization - 数据同步
 
-Data synchronization is a data transmission process to maintain data consistency between the source and target systems. This process may be accompanied by certain data conversion or cleaning. In EnOS™, data synchronization refers to the process of data transmission between EnOS™ external data sources and storage products in the EnOS™ cloud.
+数据同步是为了保持源端及目的端系统的数据一致性而进行的数据传输过程，在此过程中可能会伴随着一定的数据转换或清洗。在EnOS中，数据同步指EnOS外部数据源与EnOS云端各类存储产品之间进行数据传输的过程。
 
-### dataset
+### dataset - 数据集
 
-A dataset is a logical table or view that establishes a connection with a source table by simple logical processing based on one or more data source tables. It can be directly associated with the charts in report design. By using datasets, users no longer need to care much about the processing logics of the underlying data source tables.
+数据集是指，在一张或多张数据源表的基础上，通过简单的逻辑加工得到与源表建立连接的逻辑表或逻辑视图。它在报表设计中可直接与各类图表关联，通过使用数据集用户无需再关心底层数据源表的处理逻辑。
 
-### device
+### device - 设备
 
-A device is a physical device that is subordinate to a product. A device has a unique DeviceKey assigned by EnOS™. A device can connect directly to the EnOS™ Cloud.
+从属于某个产品下的实体设备。设备拥有由EnOS分配的唯一的DeviceKey。设备可以直接连接到EnOS Cloud。
 
-### device secret
+### device secret - 设备秘钥
 
-The device secret issued by EnOS™ is usually paired with Device key and used in conjunction with device key for one-device-one-key authentication.
+由EnOS颁发的设备密钥，通常与DeviceKey成对出现，并与DeviceKey共同运用于一机一密的认证方式。
 
 ## E
 
-### event
+### event - 事件
 
-An event is one occurring when the device is running. An event generally contains notification information that needs to be externally perceived and processed, and may include multiple output parameters. For example, the information completed by a job, or the temperature of a device at the time of failures or alerts, etc. Events can be subscribed and pushed.
+由EnOS颁发的设备密钥，通常与DeviceKey成对出现，并与DeviceKey共同运用于一机一密的认证方式。
 
 ## F
 
-### full-load synchronization
+### full-load synchronization - 全量同步
 
-Full-load synchronization means that all data of the data source is loaded at one time when data is initialized on the integration side.
+全量同步指，在集成端进行数据的初始化时，一次性的将数据源端的全部数据装载进来。
 
 ## G
 
-### gateway
+### gateway - 网关
 
-A gateway is the connector between different networks, which connects a sub device to the EnOS™ Cloud.
+是不同网络间的连接器，代理连接子设备与EnOS Cloud  。
 
 ## H
 
 ## I
 
-### Identity and Access Management (IAM)
+### Identity and Access Management (IAM) - 身份识别与访问管理
 
-The user identity management and resources access control service that EnOS™ provides to the clients. With IAM, you can create and manage users and control who has access or operational permissions to what  resources of the organization.
+是EnOS为客户提供的用户身份管理与资源访问控制服务。使用IAM，您可创建及管理用户，并可控制用户对组织名下的资源具有哪些访问或操作权限。
 
-### incremental synchronization
+### incremental synchronization - 增量同步
 
-Incremental synchronization means that, upon completion of a certain data synchronization, only the newly added or modified data in a form since the the last synchronization are synchronized. In data integration, the filter " where" is usually used to filter out the content that needs to be incrementally synchronized.
+增量同步指，在某次数据同步完成后，后续只需对自上次同步以来，表中新增或修改的数据进行同步。在数据集成中，通常使用where过滤条件筛选出需增量同步的内容。
 
 ### IoT Hub
 
-The IoT Hub is a cloud access service provided by EnOS™ for device access. A smart device can establish a secure two-way link with the cloud IoT Hub through the mainstream Internet of Things protocol (MQTT protocol) to quickly build an IoT project or application.
+IoT Hub是EnOS面向设备接入提供的云端接入服务，智能设备可通过主流的物联网协议（MQTT协议），与云端IoT Hub之间建立安全的双向链接，快速构建物联网项目或应用。
 
 ## J
 
-### job
+### job - 任务
 
-A job (or a scheduling job) is the main object of data development and the main carrier of the data computing processes. It includes computing logics, computing dependencies and scheduling properties. All the data resources related to data computing such as codes, scripts or orders are concatenated in one or more dependent scheduling jobs and executed according to the scheduling attributes, ultimately producing processing results.
+任务（又称调度任务），是数据开发的主要对象，也是数据计算流程的主要载体。它包括计算逻辑、计算依赖和调度属性。所有数据计算相关的代码、脚本或命令等数据资源，都会在一个或多个有依赖关系的调度任务中被串联，并根据调度属性被执行，最终产出数据处理结果。
 
 ## K
 
@@ -116,168 +117,168 @@ A job (or a scheduling job) is the main object of data development and the main 
 
 ## M
 
-### measuring point
+### measuring point - 测点
 
-A measuring point is generally the operating state of a device. It allows the user to customize the name of a measuring point as well as its identifier. The name is equivalent to a description that allows Chinese input, such as power.
+测点一般是设备的运行状态。测点允许用户自定义测点的名称以及标识符，名称相当于是一个描述，允许中文输入，比如电量。
 
-### message queue
+### message queue - 消息队列
 
-A message queue is a container in which messages are saved during transmission. That is, after the message is sent by the sender, it first enters a container for temporary storage. When a certain condition is met, the container is sent to the receiver. This is also called delayed communication of messages.
+消息队列是指消息在传输过程中保存消息的容器。即，消息从发送者发出后，首先进入一个容器进行临时存储，当达到某种条件后，再由此容器发送给接收者，此种情况又称消息的延迟通讯。
 
-### meta data
+### meta data - 元数据
 
-Meta data is the data about data, which is extracted from information resources to describe its characteristics, content, and structure. It is used to organize, describe, retrieve, store, and manage information resources. Meta data managed in EnOS™ mainly includes the descriptions of databases, data tables, or data content itself.
+元数据是关于数据的数据，是从信息资源中抽取出来用于说明其特征、内容和结构化的数据，用于组织、描述、检索、保存及管理信息资源。EnOS中所管理的元数据，主要包括对数据库、数据表或数据内容本身的描述信息。
 
 ## N
 
 ## O
 
-### offline computing
+### offline computing - 离线计算
 
-Please refer to <a href="#batch_computing">batch computing</a>.
+参见<a href="#batch_computing">batch computing - 批量计算</a>.
 
-### offline data synchronization
+### offline data synchronization - 离线数据同步
 
-Offline data synchronization refers to the periodic transmission of data (such as hourly, daily, weekly, monthly, etc.) into batches from the source system to the target system. Offline data synchronization has a life cycle. An offline synchronization task has a start state and an end state. In this process, data is transmitted from the source to the target in a manner of reading a snapshot.
+离线数据同步是指数据周期性的（如每小时、每天、每周、每月等）、成批量的从源端系统传输到目的端系统。离线数据同步存在生命周期，一个离线同步任务有开始状态也有结束状态，在此过程中，数据以读取快照的方式从源端传输到目的端。
 
-### one-device-one-key
+### one-device-one-key - 一机一密
 
-An authentication method where the device certificates, namely DeviceKey and DeviceSecret, are written in the device when it is burned.
+是一种认证方式。设备在烧录时即写入设备证书，即DeviceKey和DeviceSecret.
 
-### one-product-one-key
+### one-product-one-key - 一型一密
 
-An authentication method where different devices of the same product burn the same firmware (the product certificate is written in the firmware, i.e., ProductKey and ProductSecret). The DeviceKey and DeviceSecret are dynamically obtained from the cloud through the ProductKey when the device is activated.
+是一种认证方式。同一产品不同设备烧录相同固件（固件中写入产品证书，即ProductKey和ProductSecret）。固件烧录后，设备激活时通过ProductKey从云端动态获取DeviceKey和DeviceSecret。
 
-### organization
+### organization - 组织
 
-In IAM, an organization refers to a collection of users, resources, applications, and services, and is the top-level account management unit. The organization pays for the resources it owns and has full access to all resources under its name.
+在IAM中，指一组用户、资源、应用及服务的集合, 是最顶层的账户管理单元。组织为其名下所拥有的资源付费，并对其名下所有资源拥有完全权限。
 
-### organization administrator
+### organization administrator - 组织管理员
 
-In IAM, an organization administrator is a user with full permissions.
+在IAM中，组织管理员是拥有完整权限的用户。
 
 ## P
 
-### partition
+### partition - 分区
 
-In Hive databases, a partition refers to a logical storage. In querying Hive table data, to avoid wasting time and resources when scanning the entire table for each query, the partition concept is introduced when the table is built, and the data is organized into zones. Data querying may be more effective when the data are grouped in partitions and queries are made by partition.
+在Hive数据库中，指一片逻辑存储。在查询Hive表数据的过程中，为避免每次查询都要扫描全表而消耗不必要的时间和资源，建表时会引入分区概念，将数据组织成分区，按分区进行数据查询可有效提升查询效率。
 
-### product
+### product - 产品
 
-In EnOS™ device connection model, a product is the logical combination of a group of devices with shared functionality. A product has a globally unique ProductKey issued by EnOS™.
+在EnOS中，指一组具有相同功能的设备的逻辑组合。产品拥有EnOS颁发的全局唯一的ProductKey。
 
-### product secret
+### product secret - 产品秘钥
 
-The product secret issued by EnOS™ is usually paired with product key and is used in conjunction with product key for the one-product-one-key authentication.
+由平台颁发的产品密钥，通常与ProductKey成对出现，并与ProductKey共同运用于一型一密的认证方式。
 
-### publish
+### publish - 发布
 
-Publish is a type of operation permission for Topics, with permission to send messages to Topic queues.
+对Topic的操作权限类型，具有往Topic队列中发送消息的权限。
 
 ## Q
 
 ## R
 
-### real-time computing
+### real-time computing - 实时计算
 
-Please refer to <a href="#stream_computing">stream computing</a>.
+参见<a href="#stream_computing">stream computing - 流式计算</a>.
 
-### resource
+### resource - 资源
 
-Resources are the core objects of IAM permission management and are objects that users access. Resources can be divided into system resources and organizational custom resources.
+资源是IAM权限管理的核心对象，也是用户访问的对象。资源可分为系统资源及组织自定义资源。
 
 ## S
 
-### service
+### service - 服务
 
-A service is a capability or method by which a device can be called externally. Both its input and output parameters can be configured. Compared with an attribute, a service can perform more complex business logics through instructions, such as performing a specific job.
+设备可被外部调用的能力或方法，可设置输入参数和输出参数。相比于属性，服务可通过指令实现更复杂的业务逻辑，如执行某项特定的任务。
 
-### service account
+### service account - 服务账号
 
-A service account is the account that EnOS™ assigns to an application or service. The service account uniquely identifies an application. The account is required to call EnOS™ APIs through the service account to access the EnOS™ resources.
+服务账号指EnOS提供给应用或服务使用的账号，服务账号唯一识别一个应用，应用需通过服务账号调用EnOS API以访问EnOS资源。
 
-### site
+### site - 站点
 
-In Tableau, site is the minimum unit managed by Tableau Server. A site has its own URL, users, user groups, and resources (workbooks, data sources) that’s segregated from other sites to achieve multi-tenancy.
+Tableau Server上的最小管理单元，每个站点拥有自己的URL、用户集和工作簿等，站点之间数据隔离，从而支持多租户。
 
-<h3><a name="stream_computing">stream computing</a></h3>
+<h3><a name="stream_computing">stream computing - 流式计算</a></h3>
 
-Stream computing is a way of processing data, in most cases infinite data. Generally, message queues are used as data sources. It takes data records as processing units, and a record is sent downstream immediately upon completion of a calculation job. Jobs for stream computing are usually long tasks, which run continuously for data reception and processing.
+流式计算是一种数据处理方式，通常处理无限数据，一般以消息队列作为数据源。它以数据记录为处理单位，计算任务在处理完一条记录后马上发送给下游。流式计算任务往往是长任务，它将持续运行以接收和处理数据。
 
-### structured data
+### structured data - 结构化数据
 
-Structured data, or row data, is a logically expressed and implemented data from a two-dimensional table structure, typically stored in a database (such as MySQL, Oracle), or in a text file (such as CSV, TXT).
+结构化数据，也称行数据，是由二维表结构来逻辑表达和实现的数据，一般存储在数据库（如MySQL，Oracle）、或文本文件（如CSV，TXT）中。
 
-### sub device
+### sub device - 子设备
 
-A sub device is a physical device that is subordinate to a product. A sub device connects to the EnOS™ Cloud through a gateway.
+从属于某产品下的实体设备。子设备须通过网关连接EnOS Cloud。
 
-### subscribe
+### subscribe - 订阅
 
-Subscribe is a type of operation permission for Topics, with permission to acquire messages from Topic queues.
+对Topic的操作权限类型，指从Topic队列中获取消息的权限。
 
-### system resources
+### system resources - 系统资源
 
-System resources are those assigned to the organization by EnOS™ by default.
+即由EnOS默认分配予组织的资源。
 
 ## T
 
-### tag
+### tag - 标签
 
-A tag refers to a shared attribute. Tags are divided into model tags, product tags and device tags.
-• Model tags describe the shared information that all model examples under the same model have.
-• Product tags describe the shared information that all the devices under one product have.
-• A device tag is a unique tag added to a device based on its characteristics.
+指共同属性。标签分为模型标签、产品标签和设备标签。
+- 模型标签：描述同一模型下，所有模型实例所具有的共性信息。
+- 产品标签：描述同一个产品下，所有设备所具有的共性信息。
+- 设备标签：通常根据设备的特性为设备添加的特有的标记。
 
-### task
+### task - 任务节点
 
-A task is the smallest executable unit of a job. Different types of tasks are applicable to different business scenarios, where different types of data development can be implemented.
+任务节点（task）是任务（Job）的最小可执行单元，不同类型的任务节点适用于不同的业务场景，可实现不同类型的数据开发工作。
 
-### thing model
+### thing model - 物模型
 
-A thing model is a functional description of the device in the cloud, including the device attributes, measuring points, services, and events. A thing model is described with a "thing" defined by a description language (TSL or Thing Specification Language), and you can assemble and report the device data in the JSON format.
+是对设备在云端的功能描述，包括设备的属性、测点、服务和事件。平台通过定义一种物的描述语言来描述物模型，称之为 TSL（即 Thing Specification Language），采用JSON格式，您可以根据TSL组装上报设备的数据。
 
-### time series data
+### time series data - 时序数据
 
-Time series data refers to data generated and recorded in time series. For instance, the data collected and generated by real-time monitoring, inspection and analysis equipment in power/chemical industries.
+时序数据是指按时间序列产生和记录的数据。如，电力/化工等行业中通过实时监测、检查及分析设备所采集和产生的数据。
 
-### topic
+### topic - 主题
 
-In the publish/subscribe model, a topic is the theme of messages. A topic is transmitted through a message queue, and users can publish or subscribe to messages of the corresponding topic to the queue.
+在发布/订阅模型中，Topic是信息主题（theme of messages）。一个topic通过一个消息队列传输，用户可向该队列发布或者订阅对应主题的消息。
 
-### topic type
+### topic type - 话题类
 
-A topic type refers to a collection of topics of different devices under the same product. One topic type is common to all devices under a ProductKey.
+同一产品下不同设备的Topic集合，一个话题类型对一个ProductKey下所有设备通用。
 
 ## U
 
-### user
+### user - 用户
 
-In IAM, a user is an individual who belongs to an organization and can be an organization administrator or a normal user.
+在IAM中，指属于某个组织的个人，可以是组织管理员，也可以是普通用户。在IAM中，组织管理员是拥有完整权限的用户。
 
-### user group
+### user group - 用户组
 
-In IAM, a user group is a combination of users who have the same permissions.
+在IAM中，指拥有相同权限的用户的组合。
 
-### user identity
+### user identity - 用户身份
 
-The user identity is the unique identifier of a user in EnOS™. A user is authenticated through the user identity to access the EnOS™ Console and APIs and authorized to manage and operate the EnOS™ resources, applications or systems, etc..
+即用户在EnOS中的唯一身份识别。用户使用用户身份通过EnOS控制台或EnOS API对EnOS资源、应用程序或系统等进行管理和操作。
 
 ## V
 
 ## W
 
-### workbook and worksheet
+### workbook and worksheet - 工作簿和工作表
 
-In Tableau, a workbook contains sheets, a sheet can be a worksheet, a dashboard, or a story.
+在Tableau中，一个工作簿可以包含多个工作表，工作表可以是视图、仪表盘或故事。
 
-### workflow
+### workflow - 任务流
 
-A workflow is a directed acyclic graph consisting of one or more tasks that share dependencies or associations with one another. They can work together to complete a more complex data computing process.
+任务流是由一个或多个相互之间有依赖或关联关系的任务节点组成的有向无环图，它们可共同完成一个较为复杂的数据计算流程。
 
-### workflow instance
+### workflow instance - 任务流实例
 
-An instance may be generated after the workflow is run in the scheduling system, which represents a snapshot of a workflow at a certain time. An instance contains information about the workflow and the running time, status and the logs of the task.
+任务流经调度系统运行后会生成一个实例，它代表了某个任务流在某个时刻执行的一个快照。实例包含任务流及任务节点的运行时间、运行状态、运行日志等信息。
 
 ## X
 

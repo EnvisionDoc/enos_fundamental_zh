@@ -8,7 +8,7 @@ EnOS™是一个集成、安全、开放的智能物联网操作系统，帮助�
 - EnOS支持通过MQTT协议直连设备，也支持通过EnOS Edge或第三方网关设备连接设备，满足多种业务需求。
 - EnOS Edge支持多套行业标准协议和主流IoT供应商的私有协议。EnOS还提供工具集来帮助您开发私有协议。
 
-关于设备接入的详细介绍，请参见 [设备接入概述](https://docs.envisioniot.com/docs/device-connection/zh_CN/latest/deviceconnection_overview.html)。
+关于设备接入的详细介绍，请参见 [设备接入](https://docs.envisioniot.com/docs/device-connection/zh_CN/latest/device_management_overview.html)。
 
 **灵活部署**
 
