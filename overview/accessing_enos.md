@@ -12,10 +12,16 @@ EnOS为应用开发者开发API接口，可对用户账号、资产、应用等�
 
 EnOS控制台是EnOS开发者中心提供的Web应用。通过EnOS控制台，您可与EnOS云端的资源进行交互。下图展示了EnOS控制台上的一个配置页面。
 
-![EnOS Console](media/enos_console.png)
+.. image:: media/enos_console.png
+   :alt: Figure: EnOS Console
+   :width: 850px
 
 EnOS控制台页面主要由3部分组成：
 
-- 横幅：点击![Menu](media/menu.png)图标，即可显示或隐藏导航树。
-- 导航树：显示所有可访问的EnOS云端资源入口。可根据访问资源的频率，对导航树进行个性化配置，将经常访问的资源入口加入到**常用**标签下。
+- 横幅：点击 |menu| 图标，即可显示或隐藏导航树。
+- 导航树：显示所有可访问的EnOS云端资源入口。可根据访问资源的频率，对导航树进行个性化配置，将经常访问的资源入口加入到 **常用** 标签下。
 - 配置面板：进入资源访问入口后，在控制面板上完成对EnOS云端的数据和资源进行配置。
+
+.. |menu| image:: media/menu.png
+
+<!--end-->

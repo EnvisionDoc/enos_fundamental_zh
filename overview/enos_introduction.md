@@ -40,7 +40,9 @@ EnOS将自有应用与第三方应用无缝集成，提供端到端工具，帮�
 
 EnOS由云端（EnOS Cloud）和边缘设备（EnOS Edge）组成，如下图所示：
 
-![EnOS architecture](media/architecture.png)
+.. image:: media/architecture.png
+   :alt: Figure: EnOS architecture
+   :width: 650px
 
 ### EnOS云端
 

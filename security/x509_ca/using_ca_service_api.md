@@ -23,4 +23,6 @@ GET /enos/CA/cacert
 GET /enos/CA/crl
 ```
 
-注意：EnOS X.509证书服务每天早上00:00刷新证书撤销列表。
+.. note:: EnOS X.509证书服务每天早上00:00刷新证书撤销列表。
+
+<!--end-->

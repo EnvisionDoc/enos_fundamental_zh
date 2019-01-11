@@ -13,7 +13,9 @@ From a product architecture perspective, EnOS™ includes
 
 The EnOS™ Edge is in close contact with assets and provides the ability to securely exchange data with cloud-based services on the EnOS™ IoT platform such as big data analytics and asset management. The outcomes of the algorithms from big data analytics and the decision rules from asset management can then be sent back to the devices to optimize and maximize performance.
 
-![Edge](media\edge.png)
+.. image:: media/edge.png
+   :alt: Figure: Edge
+   :width: 500px
 
 ### Edge Device Hub
 EnOS™ Edge contains an Edge Device Hub. A Device Hub is the container of device drivers.  A Device Driver consists of protocol adapter, typically one for input and one for output,  and device model mapping rule.  A protocol adaptor may be regarded as an interpreter between physical units and data stream. An input adapter serves real-time data acquisition, while output adapter serves device control. Device model mapping rule defines the data transformation method between data stream of a specific device and its logical device model instance.

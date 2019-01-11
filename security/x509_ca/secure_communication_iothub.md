@@ -10,7 +10,8 @@
 
 下图说明了基于X.509证书的Edge设备和IoT平台之间的安全通信过程：
 
-![image](../media/certificate_service_secure_communication_01.png)
+.. image:: ../media/certificate_service_secure_communication_01.png
+   :width: 500px
 
 ### 1. IoT平台获取X.509证书
 
@@ -20,7 +21,9 @@
 
 1c. IoT平台接收并保存X.509证书。
 
-![image](../media/certificate_service_secure_communication_02.png)
+.. image:: ../media/certificate_service_secure_communication_02.png
+   :width: 500px
+
 ### 2. Edge获取X.509证书
 
 2a. 设备接入器通过提供Edge设备的信息，如产品ID、产品秘密、序列号、和许可证等，在IoT平台创建设备。
@@ -41,7 +44,8 @@
 
 下图说明了基于证书的身份验证过程和证书撤销过程：
 
-![image](../media/certificate_service_secure_communication_03.png)
+.. image:: ../media/certificate_service_secure_communication_03.png
+   :width: 500px
 
 ### 3. Edge设备与IoT平台之间通过基于证书的双向认证进行通信
 
@@ -55,8 +59,9 @@
 
 3d. IoT平台通过建立的TLS连接，将配置信息和控制信号通过MQTT协议下发到Edge设备。
 
+.. image:: ../media/certificate_service_secure_communication_04.png
+   :width: 500px
 
-![image](../media/certificate_service_secure_communication_04.png)
 ## 撤销证书
 
 在特定情况下，设备接入器需要撤销Edge设备的X.509证书。

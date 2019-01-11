@@ -9,7 +9,8 @@
 
 EnOS Edge是EnOS平台的数据采集前置，用于采集现场设备数据或者对接第三方系统获取数据，并将数据安全转发到EnOS云端。EnOS Edge与企业资产紧密联系，协助将资产管理、大数据分析等数据与基于云端的服务进行数据交换。然后，数据分析和资产管理命令会回传到设备，用于优化设备性能，或执行关键操作。
 
-![](media/edge_architecture.png)
+.. image:: media/edge_architecture.png
+   :width: 500px
 
 -   **Connectivity engine**：提供丰富的行业标准协议库，用户可以配置引擎实现远程设备的数据连接。
 
@@ -25,7 +26,8 @@ EnOS Edge是EnOS平台的数据采集前置，用于采集现场设备数据或�
 
 ## EnOS云端
 
-![](media/cloud_architecture.png)
+.. image:: media/cloud_architecture.png
+   :width: 500px
 
 ### 基础设施层
 
@@ -56,13 +58,13 @@ EnOS Cloud基础设施层提供整套数据库集群，比如Redis，MySQL，Hba
 
 EnOS核心引擎层提供如下引擎：
 
--   **Event engine**：提供事件告警服务，通过超阈值、复杂规则组合等事件触发规则获取设备异常信息。
+- **Event engine**：提供事件告警服务，通过超阈值、复杂规则组合等事件触发规则获取设备异常信息。
 
--   **Rule engine**：类似于物联网中心，依据配置的规则，将数据分派给不同的引擎作进一步处理。
+- **Rule engine**：类似于物联网中心，依据配置的规则，将数据分派给不同的引擎作进一步处理。
 
--   **Stream computing and batch job process engines**：提供核心计算能力，并能满足应用程序的定制计算和数据存储需求。
+- **Stream computing and batch job process engines**：提供核心计算能力，并能满足应用程序的定制计算和数据存储需求。
 
--   **AI engine**：机器学习专用引擎。
+- **AI engine**：机器学习专用引擎。
 
 核心引擎层助力通过服务层进行的应用程序开发。
 
@@ -70,13 +72,13 @@ EnOS核心引擎层提供如下引擎：
 
 对服务层各个服务模块的介绍如下：
 
--   **Edge management service**：支持边缘计算设备的全生命周期管理，提供设备的连接和状态监控服务。
+- **Edge management service**：支持边缘计算设备的全生命周期管理，提供设备的连接和状态监控服务。
 
--   **Device data access service**：通过API和SDK对数据访问点和计算点进行双向访问，提供数据采集服务。
+- **Device data access service**：通过API和SDK对数据访问点和计算点进行双向访问，提供数据采集服务。
 
--   **Common Data Service**：提供物联网行业中的常见公共数据服务，如天气、电价等。
+- **Common Data Service**：提供物联网行业中的常见公共数据服务，如天气、电价等。
 
--   **Application management suite**：提供应用管理和调试工具集，如访问控制、系统隔离等。
+- **Application management suite**：提供应用管理和调试工具集，如访问控制、系统隔离等。
 
 ### 设备模型和用户权限模块
 

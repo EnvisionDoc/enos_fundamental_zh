@@ -18,12 +18,16 @@ paragraph of code
 
 > cite
 
-![描述图中内容](/url/to/image.svg)
+.. image:: /url/to/image.svg
+   :alt: 描述
+   :width: 400px
 
 
-**Warning警告**: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-**Notice注意**: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-**Tip提示**: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+.. warning:: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+.. note:: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+.. tip:: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # Lists
 Depending on your needs, you can use Markdown or HTML for lists.

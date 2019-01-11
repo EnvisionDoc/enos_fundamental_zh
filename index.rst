@@ -19,6 +19,7 @@ EnOS智能物联网操作系统
    EnOS Edge <https://docs.envisioniot.com/docs/enos-edge/zh_CN/latest/edge_overview.html>
    设备管理 <https://docs.envisioniot.com/docs/device-connection/zh_CN/latest/device_management_overview.html>
    告警服务 <https://docs.envisioniot.com/docs/event-management/zh_CN/latest/alert_overview.html>
+   流式计算 <https://docs.envisioniot.com/docs/online-data/zh_CN/latest/streaming_overview.html>
    离线分析 <https://docs.envisioniot.com/docs/offline-data/zh_CN/latest/gettingstarted.html>
    数据探索 <https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/dataexplorer_overview.html>
    分析与报表 <https://docs.envisioniot.com/docs/analysis-report/zh_CN/latest/report_overview.html>

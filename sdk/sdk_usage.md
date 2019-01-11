@@ -155,7 +155,7 @@ public void onConnectSuccess()
 ```
 
 
-*注意，子设备的productKey同样需要通过[控制台](http://tapd.oa.com)，或者[RestfulAPI](http://tapd.oa.com)进行获取。关于子设备的deviceKey, deviceSecret, 除了可以通过[控制台](http://tapd.oa.com)或[RestfulAPI](http://tapd.oa.com)外，我们也可以使用MQTT SDK的SubDeviceDynamicRegRequest来进行注册。*
+.. note:: 子设备的productKey同样需要通过[控制台](http://tapd.oa.com)，或者[RestfulAPI](http://tapd.oa.com)进行获取。关于子设备的deviceKey, deviceSecret, 除了可以通过[控制台](http://tapd.oa.com)或[RestfulAPI](http://tapd.oa.com)外，我们也可以使用MQTT SDK的SubDeviceDynamicRegRequest来进行注册。
 
 接下来我们发送一个子设备的测点数据给到服务端
 
@@ -222,9 +222,9 @@ client.setArrivedMsgHandler(DisableDeviceCommand.class, new IMessageHandler<Disa
 
 至此，sdk的大体功能就介绍完了，上下行消息可以再sdk中自行去寻找，用法都大同小异。
 
-![packages](https://github.com/EnvisionIot/EnOS™-iot-mqtt-java-sdk/blob/master/src/main/resources/imgs/tapd_20716331_base64_1534760042_26.png)
-
-
+.. image:: https://github.com/EnvisionIot/EnOS™-iot-mqtt-java-sdk/blob/master/src/main/resources/imgs/tapd_20716331_base64_1534760042_26.png
+   :alt: Figure: packages
+   :width: 400px
 ----------
 
 <a name="upcoming"></a>
