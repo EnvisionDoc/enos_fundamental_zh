@@ -2,9 +2,23 @@
 
 EnOS™是一个集成、安全、开放的智能物联网操作系统，帮助企业和城市加速数字化转型和生态系统建设。EnOS™建立在开放的标准和最佳设计之上，并持续在开放的生态系统中运行。
 
+EnOS由云端（EnOS Cloud）和边缘设备（EnOS Edge）组成，如下图所示：
+
 .. image:: media/architecture.png
    :alt: Figure: EnOS architecture
    :width: 650px
+
+## EnOS云端
+
+EnOS云端提供基于模型的设备资产管理、数据收集、流式数据处理、批量数据处理、自定义事件触发规则、以及时序数据查询等基础能力。
+
+对于设备接入，EnOS云端支持自有EnOS Edge；如果业务需要，也支持与EnOS设备接入框架兼容的第三方边缘设备。
+
+## EnOS Edge
+
+EnOS Edge提供设备数据收集、设备控制、数据规范化、基于模型的实时计算等能力。EnOS Edge与云端通过TLS/SSL协议进行安全数据通信，每个边缘设备和EnOS Cloud接入点都有专用的X.509证书。
+
+## 产品优势
 
 **设备接入**
 
