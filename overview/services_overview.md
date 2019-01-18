@@ -13,7 +13,7 @@ EnOS™是一个集成、安全、开放的智能物联网操作系统，提供�
 </div>
 <div class="block-4" id="stream-computing">
 <span id="stream-computing"></span><h2>流数据分析<a class="headerlink" href="#stream-computing" title="Permalink to this headline"></a></h2>
-<p>基于Apache Spark™，提供对用户设备和站点的抽象计算模型的访问，支持用户通过EnOS提供的SDK和API运行代码，以便根据业务需求进行灵活的定制。<a class="reference external" href="https://docs.envisioniot.com/docs/online-data/zh_CN/latest/">即将上线 >></a></p>
+<p>基于Apache Spark™，提供对用户设备和站点的抽象计算模型的访问，支持用户通过EnOS提供的SDK和API运行代码，以便根据业务需求进行灵活的定制。<a class="reference external" href="https://docs.envisioniot.com/docs/online-data/zh_CN/latest/streaming_overview.html">即将上线 >></a></p>
 </div>
 <div class="block-4" id="event-management">
 <span id="event-management"></span><h2>资产告警<a class="headerlink" href="#event-management" title="Permalink to this headline"></a></h2>
@@ -29,11 +29,11 @@ EnOS™是一个集成、安全、开放的智能物联网操作系统，提供�
 </div>
 <div class="block-4" id="data-explorer">
 <span id="data-explorer"></span><h2>数据探索<a class="headerlink" href="#data-explorer" title="Permalink to this headline"></a></h2>
-<p>基于Apache Zeppelin项目开源软件，降低数据处理的障碍，实现数据驱动的、协作的、交互的数据分析模式。<a class="reference external" href="https://docs.envisioniot.com/docs/analysis-report/zh_CN/latest/data_explorer/">参考文档 >></a></p>
+<p>基于Apache Zeppelin项目开源软件，降低数据处理的障碍，实现数据驱动的、协作的、交互的数据分析模式。<a class="reference external" href="https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/dataexplorer_overview.html">参考文档 >></a></p>
 </div>
 <div class="block-4" id="bi-report">
 <span id="bi-report"></span><h2>分析和报表<a class="headerlink" href="#bi-report" title="Permalink to this headline"></a></h2>
-<p>提供拖拽式的交互界面，降低收集、处理、分析数据的障碍，帮助用户快速生成数据分析报表，从而避免前端开发的重复性工作。<a class="reference external" href="https://docs.envisioniot.com/docs/analysis-report/zh_CN/latest/bi_report/">参考文档 >></a></p>
+<p>提供拖拽式的交互界面，降低收集、处理、分析数据的障碍，帮助用户快速生成数据分析报表，从而避免前端开发的重复性工作。<a class="reference external" href="https://docs.envisioniot.com/docs/analysis-report/zh_CN/latest/report_overview.html">参考文档 >></a></p>
 </div>
 <div class="block-4" id="enos-apis-and-sdks">
 <span id="enos-apis-and-sdks"></span><h2>API 与 SDK<a class="headerlink" href="#enos-apis-and-sdks" title="Permalink to this headline"></a></h2>

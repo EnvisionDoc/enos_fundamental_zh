@@ -22,6 +22,7 @@ EnOS智能物联网操作系统
    流式计算 <https://docs.envisioniot.com/docs/online-data/zh_CN/latest/streaming_overview.html>
    离线分析 <https://docs.envisioniot.com/docs/offline-data/zh_CN/latest/gettingstarted.html>
    数据探索 <https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/dataexplorer_overview.html>
+   数据资产管理 <https://docs.envisioniot.com/docs/data-asset/zh_CN/latest/storage_strategy_overview.html>
    分析与报表 <https://docs.envisioniot.com/docs/analysis-report/zh_CN/latest/report_overview.html>
    应用开发 <https://docs.envisioniot.com/docs/app-development/zh_CN/latest/app_dev_overview.html>
 
