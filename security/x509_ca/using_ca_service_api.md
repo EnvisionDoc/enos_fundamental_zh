@@ -2,10 +2,11 @@
 
 EnOS提供开放的API接口，用于获取CA根证书和证书撤销列表。
 
-获取CA根证书和证书撤销列表的API接口，可通过以下EnOS网关地址：
+以下API的调用路径是基于`https://<enos_cluster_hostname>`的相对路径，`https://<enos_cluster_hostname>`指的是EnOS云集群实例的域名。当前EnOS有以下公有云集群实例：
 
 - AWS-CN: `https://developer.envisioncn.com`
-- DECADA: `https://portal-decada1.envisioniot.com`
+
+.. note:: 如果你是私有云用户，该地址为你的私有云部署的域名。
 
 ## 获取CA根证书
 

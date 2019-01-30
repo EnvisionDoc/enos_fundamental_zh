@@ -195,7 +195,7 @@ IoT Hub是EnOS面向设备接入提供的云端接入服务，智能设备可通
 
 ### service account - 服务账号
 
-服务账号指EnOS提供给应用或服务使用的账号，服务账号唯一识别一个应用，应用需通过服务账号调用EnOS API以访问EnOS资源。
+服务账号指EnOS提供给应用或服务使用的账号，服务账号唯一识别一个应用。调用EnOS API以访问EnOS资源或者通过EnOS SDK读取订阅数据时，都需要用到服务账号。
 
 ### site - 站点
 
@@ -215,7 +215,7 @@ Tableau Server上的最小管理单元，每个站点拥有自己的URL、用户
 
 ### subscribe - 订阅
 
-对Topic的操作权限类型，指从Topic队列中获取消息的权限。
+对Topic的操作权限类型，指从Topic队列中获取消息的权限。EnOS数据订阅服务支持推送内容包括资产实时上送数据和资产告警数据。基于该订阅服务，应用获取资产数据不需再不停轮询API，仅需在接收到EnOS推送的消息时调用API获取数据即可，大大提高API调用效率和降低API使用费用。  
 
 ### system resources - 系统资源
 
@@ -244,7 +244,7 @@ Tableau Server上的最小管理单元，每个站点拥有自己的URL、用户
 
 ### topic - 主题
 
-在发布/订阅模型中，Topic是信息主题（theme of messages）。一个topic通过一个消息队列传输，用户可向该队列发布或者订阅对应主题的消息。
+在数据订阅服务中，Topic是信息主题（theme of messages）。一个topic通过一个消息队列传输，用户可向该队列发布或者订阅对应主题的消息。
 
 ### topic type - 话题类
 
