@@ -20,7 +20,7 @@ paragraph of code
 
 .. image:: /url/to/image.svg
    :alt: 描述
-   :width: 400px
+   
 
 
 .. warning:: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

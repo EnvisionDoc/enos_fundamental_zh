@@ -6,7 +6,7 @@ EnOS由云端（EnOS Cloud）和边缘设备（EnOS Edge）组成，如下图所
 
 .. image:: media/architecture.png
    :alt: Figure: EnOS architecture
-   :width: 650px
+   
 
 ## EnOS云端
 

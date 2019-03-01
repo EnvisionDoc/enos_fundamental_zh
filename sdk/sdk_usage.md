@@ -224,7 +224,7 @@ client.setArrivedMsgHandler(DisableDeviceCommand.class, new IMessageHandler<Disa
 
 .. image:: https://github.com/EnvisionIot/EnOS™-iot-mqtt-java-sdk/blob/master/src/main/resources/imgs/tapd_20716331_base64_1534760042_26.png
    :alt: Figure: packages
-   :width: 400px
+   
 ----------
 
 <a name="upcoming"></a>

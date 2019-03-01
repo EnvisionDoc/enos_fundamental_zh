@@ -14,7 +14,6 @@ EnOS控制台是EnOS开发者中心提供的Web应用。通过EnOS控制台，�
 
 .. image:: media/enos_console.png
    :alt: Figure: EnOS Console
-   :width: 850px
 
 EnOS控制台页面主要由3部分组成：
 

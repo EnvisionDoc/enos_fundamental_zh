@@ -10,7 +10,7 @@
 EnOS Edge是EnOS平台的数据采集前置，用于采集现场设备数据或者对接第三方系统获取数据，并将数据安全转发到EnOS云端。EnOS Edge与企业资产紧密联系，协助将资产管理、大数据分析等数据与基于云端的服务进行数据交换。然后，数据分析和资产管理命令会回传到设备，用于优化设备性能，或执行关键操作。
 
 .. image:: media/edge_architecture.png
-   :width: 700px
+   
 
 -   **Connectivity engine**：提供丰富的行业标准协议库，用户可以配置引擎实现远程设备的数据连接。
 
@@ -27,7 +27,7 @@ EnOS Edge是EnOS平台的数据采集前置，用于采集现场设备数据或�
 ## EnOS云端
 
 .. image:: media/cloud_architecture.png
-   :width: 700px
+   
 
 ### 基础设施层
 
