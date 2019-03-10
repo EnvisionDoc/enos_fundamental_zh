@@ -4,6 +4,12 @@ EnOS智能物联网操作系统
 
 .. toctree::
    :maxdepth: 1
+   :caption: 发布公告
+
+   releasenotes/20190305
+
+.. toctree::
+   :maxdepth: 1
    :caption: EnOS概述
 
    overview/enos_introduction
