@@ -15,9 +15,9 @@ EnOS™是一个集成、安全、开放的智能物联网操作系统，提供�
 <span id="stream-computing"></span><h2>流数据分析<a class="headerlink" href="#stream-computing" title="Permalink to this headline"></a></h2>
 <p>基于Apache Spark™，提供对用户设备和站点的抽象计算模型的访问，支持用户通过EnOS提供的SDK和API运行代码，以便根据业务需求进行灵活的定制。<a class="reference external" href="https://www.envisioniot.com/docs/online-data/zh_CN/latest/streaming_overview.html">即将上线 >></a></p>
 </div>
-<div class="block-4" id="event-management">
-<span id="event-management"></span><h2>资产告警<a class="headerlink" href="#event-management" title="Permalink to this headline"></a></h2>
-<p>提供对设备和资产异常状态的告警定义，接收资产告警上报和处理，以及针对资产数据定义告警触发触发条件，满足对资产的实时状态监控和故障处理。<a class="reference external" href="https://www.envisioniot.com/docs/event-management/zh_CN/latest/alert_overview.html">参考文档 >></a></p>
+<div class="block-4" id="alert-management">
+<span id="alert-management"></span><h2>资产告警<a class="headerlink" href="#alert-management" title="Permalink to this headline"></a></h2>
+<p>提供对设备和资产异常状态的告警定义，接收资产告警上报和处理，以及针对资产数据定义告警触发触发条件，满足对资产的实时状态监控和故障处理。<a class="reference external" href="https://www.envisioniot.com/docs/device-connection/zh_CN/latest/howto/alert/alert_overview.html">参考文档 >></a></p>
 </div>
 <div class="block-4" id="data-integration">
 <span id="data-integration"></span><h2>数据集成<a class="headerlink" href="#data-integration" title="Permalink to this headline"></a></h2>
