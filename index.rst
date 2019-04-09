@@ -4,9 +4,10 @@ EnOS智能物联网操作系统
 
 .. toctree::
    :maxdepth: 1
-   :caption: 发布公告
+   :caption: 更新说明
 
    releasenotes/index.rst
+   doc_updates
 
 .. toctree::
    :maxdepth: 1
