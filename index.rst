@@ -9,6 +9,7 @@ EnOS智能物联网操作系统
    releasenotes/index.rst
    doc_updates
 
+
 .. toctree::
    :maxdepth: 1
    :caption: EnOS概述
@@ -18,6 +19,7 @@ EnOS智能物联网操作系统
    overview/accessing_enos
    用户与权限管理 <https://www.envisioniot.com/docs/iam/zh_CN/latest/iam_overview.html>
 
+
 .. toctree::
    :maxdepth: 1
    :caption: 安全
@@ -25,8 +27,19 @@ EnOS智能物联网操作系统
    security/security_overview
    security/x509_ca/index
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 资源管理
+
+   resourcemanagement/overview
+   resourcemanagement/getstarted
+   resourcemanagement/reference
+
+
 .. toctree::
    :maxdepth: 1
    :caption: 参考信息
 
    reference/glossary
+
