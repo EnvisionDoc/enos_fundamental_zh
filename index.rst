@@ -15,7 +15,6 @@ EnOS智能物联网操作系统
    :caption: EnOS概述
 
    overview/enos_introduction
-   overview/technical_architecture
    overview/accessing_enos
    用户与权限管理 <https://www.envisioniot.com/docs/iam/zh_CN/latest/iam_overview.html>
 
