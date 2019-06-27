@@ -15,9 +15,7 @@ EnOS智能物联网操作系统
    :caption: EnOS概述
 
    overview/enos_introduction
-   overview/accessing_enos
-   用户与权限管理 <https://www.envisioniot.com/docs/iam/zh_CN/latest/iam_overview.html>
-
+   overview/getting_started_with_enos/index
 
 .. toctree::
    :maxdepth: 1
@@ -25,7 +23,7 @@ EnOS智能物联网操作系统
 
    security/security_overview
    security/x509_ca/index
-
+   身份和访问管理 <http://www.envisioniot.com/docs/iam/zh_CN/latest/iam_overview.html>
 
 .. toctree::
    :maxdepth: 1
