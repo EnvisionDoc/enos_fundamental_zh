@@ -1,4 +1,4 @@
-# 访问EnOS资源
+# 访问EnOS
 
 EnOS™的功能可通过EnOS开发者中心的控制台访问，也可通过服务API接口的形式访问。
 
@@ -6,7 +6,7 @@ EnOS™的功能可通过EnOS开发者中心的控制台访问，也可通过服
 
 EnOS为应用开发者开发API接口，可对用户账号、资产、应用等云端资源进行增删改等操作。EnOS采用了一些列身份认证和授权技术，以确保对API接口的安全访问。
 
-调用EnOS API接口前，您需要在EnOS控制台注册应用，获取调用API所需要的应用账号和应用密钥，用于身份认证和授权。关于调用EnOS API接口的详细步骤，请参考[EnOS REST API 快速入门](https://www.envisioniot.com/docs/app-development/zh_CN/latest/gettingstarted_api.html)。
+调用EnOS API接口前，您需要在EnOS控制台注册应用，获取调用API所需要的应用账号和应用密钥，用于身份认证和授权。
 
 ## EnOS控制台
 
@@ -23,4 +23,7 @@ EnOS控制台页面主要由3部分组成：
 
 .. |menu| image:: media/menu.png
 
+有关EnOS控制台的GUI使用惯例，参见 [EnOS控制台GUI使用惯例](ui_conventions)。
+
 <!--end-->
+

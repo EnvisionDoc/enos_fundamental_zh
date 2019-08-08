@@ -15,6 +15,8 @@ EnOS智能物联网操作系统
    :caption: EnOS概述
 
    overview/enos_introduction
+   overview/accessing_enos
+   overview/ui_conventions
    overview/getting_started_with_enos/index
 
 .. toctree::
