@@ -1,0 +1,11 @@
+[0802/164101:INFO:exception_record.cc(518)] [QB]Process ID: 23680 Type: 4
+[0802/164142:INFO:exception_record.cc(518)] [QB]Process ID: 15252 Type: 4
+[0802/164928:INFO:exception_record.cc(518)] [QB]Process ID: 9348 Type: 4
+[0802/164939:INFO:exception_record.cc(518)] [QB]Process ID: 18460 Type: 4
+[0802/172247:INFO:exception_record.cc(518)] [QB]Process ID: 23844 Type: 2
+[0803/095357:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0803/095404:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0803/103039:INFO:exception_record.cc(518)] [QB]Process ID: 11232 Type: 4
+[0804/091533:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0804/092541:INFO:exception_record.cc(518)] [QB]Process ID: 7732 Type: 4
+[0804/110601:INFO:exception_record.cc(518)] [QB]Process ID: 10004 Type: 2

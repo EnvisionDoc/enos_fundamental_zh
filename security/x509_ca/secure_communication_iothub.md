@@ -4,7 +4,7 @@
 
 - 边缘网关设备和EnOS物联网平台之间的通信必须使用基于证书的双向认证。
 - 支持RSA加密算法验证签名，并强制要求2048位长。
-- EnOS云端的资源被隔离保存，并且API访问权限由IAM控制，详见[IAM简介](https://www.envisioniot.com/docs/iam/zh_CN/latest/iam_overview.html)。
+- EnOS云端的资源被隔离保存，并且API访问权限由IAM控制，详见[IAM简介](/docs/iam/zh_CN/latest/iam_overview.html)。
 
 ## 配置阶段
 

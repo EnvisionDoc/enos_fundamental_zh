@@ -4,9 +4,10 @@ EnOS智能物联网操作系统
 
 .. toctree::
    :maxdepth: 1
-   :caption: 更新说明
+   :caption: 版本信息
 
    releasenotes/index.rst
+   releasenotes/knownissue
    doc_updates
 
 
@@ -25,15 +26,15 @@ EnOS智能物联网操作系统
 
    security/security_overview
    security/x509_ca/index
-   身份和访问管理 <http://www.envisioniot.com/docs/iam/zh_CN/latest/iam_overview.html>
+   身份和访问管理 </docs/iam/zh_CN/latest/iam_overview>
 
 .. toctree::
    :maxdepth: 1
    :caption: 资源管理
 
    resourcemanagement/overview
-   resourcemanagement/getstarted
    resourcemanagement/reference
+   resourcemanagement/getstarted
 
 
 .. toctree::
@@ -41,4 +42,5 @@ EnOS智能物联网操作系统
    :caption: 参考信息
 
    reference/glossary
+   reference/releasenotearchive/index
 

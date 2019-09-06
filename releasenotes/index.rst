@@ -11,11 +11,11 @@ EnOS在持续迭代改进。为了让大家随时了解最新的开发成果，�
 
 .. toctree::
    :maxdepth: 1
-   :caption: 发布公告
+   :caption: 发布信息
 
+   201909
    201908
    201906
    201905
-   20190410
-   20190305
+   relnotes_archive
 
