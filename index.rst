@@ -26,7 +26,7 @@ EnOS智能物联网操作系统
 
    security/security_overview
    security/x509_ca/index
-   身份和访问管理 </docs/iam/zh_CN/latest/iam_overview>
+   身份和访问管理 </docs/iam/zh_CN/2.0.8/iam_overview>
 
 .. toctree::
    :maxdepth: 1

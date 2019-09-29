@@ -17,11 +17,11 @@ To facilitate your application development offline, EnOS provides open-source SD
 - Java
 - Python
 
-For more information, see [EnOS SDKs](/docs/app-development/en/latest/sdk_overview).
+For more information, see [EnOS SDKs](/docs/app-development/en/2.0.8/sdk_overview).
 
 ## Host Applications on EnOS
 
 ## Expose Application Capabilities
 
-EnOS provides a secure light-weight API Gateway to help you host your own APIs. For more information, see [API Management Overview](/docs/api-mgmt/en/latest/api_management_overview.html).
+EnOS provides a secure light-weight API Gateway to help you host your own APIs. For more information, see [API Management Overview](/docs/api-mgmt/en/2.0.8/api_management_overview.html).
 

@@ -24,7 +24,7 @@ A subject-oriented and integrated data storage environment for data analysis. Se
 
 HDFS is used for big data analysis and storage scenarios. Select the appropriate storage size according to actual business requirements (10 ~ 1,000G). 
 
-For details about the computing and storage resource specification, see [Resource Specification](/docs/enos/en/latest/resourcemanagement/reference.html).
+For details about the computing and storage resource specification, see [Resource Specification](/docs/enos/en/2.0.8/resourcemanagement/reference.html).
 
 ## Next Unit
 

@@ -35,7 +35,7 @@ To secure your assets and data, EnOS enforces access control
 - at the service level, so that a user would need to request proper access from the OU administrator to be able to read, write, or control objects in a service.
 - at the asset level, so that a user can only access the assets that are authorized to the user.
 
-For information about how to manage the OU, users, and permissions, see [IAM Overview](/docs/iam/en/latest/iam_overview).
+For information about how to manage the OU, users, and permissions, see [IAM Overview](/docs/iam/en/2.0.8/iam_overview).
 
 ## Next Unit
 
