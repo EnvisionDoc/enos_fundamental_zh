@@ -29,16 +29,8 @@ Take the following steps to apply for an enterprise account:
 
 After the enterprise account is created, the OU owner can log in EnOS Console to complete further configuration for the OU. The OU owner can create additional accounts and assign proper rights for relevant roles in the enterprise, such as IoT engineers, business analysts, and application developers.
 
-## User Account and Permissions
-
-To secure your assets and data, EnOS enforces access control
-- at the service level, so that a user would need to request proper access from the OU administrator to be able to read, write, or control objects in a service.
-- at the asset level, so that a user can only access the assets that are authorized to the user.
-
-For information about how to manage the OU, users, and permissions, see [IAM Overview](/docs/iam/en/latest/iam_overview).
-
 ## Next Unit
 
-[Planning Resource and Storage Policy](planning)
+[Initializing OU](planning)
 
 <!--end-->
