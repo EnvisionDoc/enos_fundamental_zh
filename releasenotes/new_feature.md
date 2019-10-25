@@ -1,0 +1,149 @@
+# 新增服务与功能
+
+该部分介绍了在本次发布中的新服务及特性。
+
+
+## 通用服务
+
+我们新增了资源管理-数据探索沙箱资源申请和外部源连接-GitLab数据源注册。详细信息如下：
+
+### 资源管理
+
+- 新增了数据探索沙箱资源申请。使用数据探索功能开发程序进行数据分析和处理前，需要根据业务需求申请数据探索沙箱资源。更多信息，参见 [EnOS上的资源](/docs/enos/zh_CN/2.0.9/resourcemanagement/overview.html)。
+
+### 外部源连接
+
+- 新增了GitLab数据源连接。在使用数据探索服务中的 Jupyter Notebook 时，可以通过外部源连接注册的GitLab数据源，将Notebook通过Git命令保存到GitLab，实现代码的版本管理。更多信息，参见 [配置GitLab数据源](/docs/offline-data/zh_CN/2.0.9/data_source/connecting_gitlab.html)。
+- 新增了外部源连接连通性测试功能。完成数据源信息配置后，可快速测试数据源是否可连通，提高数据源配置效率。更多信息，参见 [外部源连接](/docs/offline-data/zh_CN/2.0.9/data_source/index.html)。
+
+
+
+## EnOS Edge
+
+### 资产树
+
+支持用户在EnOS Edge上查看由接入Edge的子设备构成的资产树。这些资产树只显示EnOS Edge关联的逻辑资产所在节点以及EnOS Edge的子设备挂载的节点。参见 [资产树管理](/docs/device-connection/zh_CN/2.0.9/howto/asset_tree/index)。
+
+### 元数据导出服务
+
+支持将模型、资产和资产树等元数据导出到MySQL数据表中，以便应用程序以数据表的形式使用元数据。
+
+### 告警服务
+
+支持与EnOS Cloud近似的告警服务，包括告警级别、类型、内容、规则。暂不支持告警屏蔽、为同一模型的设备设置阈值不同的告警、告警延时触发。
+
+更多信息，参见 [告警服务](/docs/device-connection/zh_CN/2.0.9/howto/alert/index)。
+
+
+### 流式计算
+
+- 在EnOS Edge上支持基于StreamSets的流式计算能力。
+- 在EnOS Edge上支持云端StreamSets相同的所有通用算子及光伏领域的定制算子。EnOS Edge支持的算子列表，参见 [边缘计算](/docs/enos-edge/zh_CN/2.0.9/learn/edge_computing#streamsets)。
+- EnOS Edge的StreamSets模块支持Edge高可用性主备部署方案。
+- EnOS Edge提供与EnOS Cloud相同的StreamSets Pipeline配置和管理界面。
+
+有关在EnOS Edge上配置StreamSets Pipeline的更多信息，参见 [使用StreamSets算子进行开发](/docs/data-asset/zh_CN/2.0.9/howto/stream/streamsets)。
+
+### TSDB
+
+在EnOS Edge上支持TSDB能力。详情如下：
+
+- 支持从EnOS Edge端的TSDB读取、向其写入数据。提供基于TSDB的查询/及写入API。
+- 提供与EnOS Cloud一致的对原始数据的秒级存储，1分钟归一化数据的存储。
+- TSDB支持EnOS的高可用性：支持在主备EnOS Edge上分别部署TSDB。
+
+### Edge版本的IAM与Application Portal
+
+- 支持EnOS Edge侧的IAM。
+
+- 支持EnOS Edge上的Application Portal，包括应用集成及应用的权限管理。
+
+
+## 设备管理
+
+在该版本中，新增了告警延时触发及逻辑资产管理。详情如下：
+
+### 告警服务
+
+- 告警规则中，支持将告警设置为当满足规则要求的测点在一段时间内持续被上报后才再触发。在实际场景中，有些告警并不需要在异常发生时立即触发，而是等异常持续一段时间后再触发。此时，可以在告警规则中给告警设置一个触发延时时间。某时刻的测点值满足规则要求时，计时器开始计时。之后上报的测点值如仍满足规则要求，计时器继续计时。如果计时器计时期间，上报的某测点值达不到规则要求，计时中断清零。当上报的测点持续满足规则，计时器到达延时时间，告警触发。更多信息，参见 [教程：设置告警延时触发](/docs/device-connection/zh_CN/2.0.9/howto/alert/setting_alert_triggering_delay_timer)。
+
+.. image:: media/alert_triggering_delay_timer.gif
+
+### 设备管理
+
+- 增加了逻辑资产管理功能。支持用户在 **设备管理 > 逻辑资产** 中，统一管理在 控制台 **资产树** 中创建的非设备资产。当前逻辑资产管理功能支持用户编辑、删除逻辑资产。更多信息，参见 [管理资产树](/docs/device-connection/zh_CN/2.0.9/howto/device/manage/managing_assettree)。
+
+.. image:: media/non_device_asset_management.gif
+
+
+
+<!--
+
+## 数据资产管理
+
+在该版本中，我们新增了时序数据清理和数据订阅任务运行监控功能。详细信息如下：
+
+### 时序数据清理
+
+增加了时序数据清理工具，可以删除存储在TSDB中，指定模型、测点、资产、和时间范围内的不必要的或非正式的历史数据，以释放存储资源，降低成本。更多信息，参见 [清理时序数据](/docs/data-asset/zh_CN/2.0.9/howto/storage/clearing_data.html)。
+
+.. image:: media/data_cleanup.gif
+
+### 订阅任务运行监控
+
+增加了对数据订阅任务运行情况的监控功能。当线下使用数据订阅服务进行应用开发，在调试过程中出现问题，比如未获取到订阅数据时，可使用订阅任务运行监控排查异常情况。当应用上线运行过程中出现数据消费故障，比如数据断流、数据消费缓慢等情况时，可使用运行监控排查问题。更多信息，参见 [消费订阅数据](/docs/data-asset/zh_CN/2.0.9/howto/obtain/consuming_subscribed_data.html)。
+
+.. image:: media/subscription_monitor.gif
+
+-->
+
+
+
+## 大数据分析
+
+在该版本中，我们新增了 Jupyter Notebook 数据探索工具。详细信息如下：
+
+### 数据探索
+
+在已有 Zeppelin Notebook 的基础上，我们增加了 Jupyter Notebook 数据探索工具，同时支持Python2.x，Python3.x, R 三种内核，支持数据驱动的交互式数据分析任务。数据探索环境还预装了常用的分析算法包，方便数据分析师或数据科学家直接使用。 更多信息，参见 [数据探索](/docs/offline-data/zh_CN/2.0.9/data_explorer/index.html)。
+
+数据探索服务的使用流程如下：
+
+.. image:: media/data_explorer_workflow.png
+
+创建和使用 Jupyter Notebook 的大致步骤如下：
+
+.. image:: media/data_explorer.gif
+
+
+
+## 应用使能
+
+### 服务托管中心
+
+支持在服务内快速切换组织。
+
+.. image:: media/shc_selectou.gif
+
+
+
+### Application Portal
+
+Application Portal 于2019年6月发布了1.0版本，为各领域的应用打造统一的权限和登录门户，实现完整灵活的权限管理体系托管和统一的One Product用户体验。Application Portal的功能架构分为 **管理后台** 和 **Portal** 两部分。
+
+- 通过管理后台，企业/组织的管理员通过管理后台实现基于用户、角色、组织结构、应用、资产权限等多方面权限的集中管理和分级管理。
+- 应用Portal为用户提供多领域应用的统一门户，帮助用户便捷地实现跨企业/组织、跨应用的访问，切换语言、用户设置、修改密码、消息中心、帮助中心等。
+
+.. image:: media/app_portal.gif
+
+Application Portal 1.0版本发布后，为满足更复杂的用户场景，更好的服务于各领域和客户，Application Portal增加了以下新功能：
+
+- 消息中心 - 告警弹窗：汇总多应用的告警消息（支持消息弹窗和响铃提示），帮助用户快速查看和处理应用告警信息
+- 应用快捷方式：组合多个应用的菜单，形成应用快捷方式（虚拟应用），灵活地满足用户不同的业务场景需求
+- 应用排序：在管理后台对应用进行排序，调整用户在应用列表中查看到的应用的排序
+- Single Sign On（SSO）：支持企业/组织的域账号系统，允许用户使用域账号登录Application Portal。
+- Edge：Application Portal可部署到Edge平台，实现在Edge环境下使用Application Portal。
+- 响应式设计：实现了在移动端响应式，用户可在移动端浏览器使用Portal的功能，如应用切换、告警弹窗、切换语言、个人设置等。
+- 批量导入用户：在添加用户时，可下载Excel模板文件，批量导入用户。同时支持域账号和非域账号，并且在批量导入用户时可设置用户的角色和为用户分配组织结构。
+
+更多信息，参见 [有关Application Portal](/docs/app-development/zh_CN/2.0.9/app_portal/overview.html)。

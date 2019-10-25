@@ -7,8 +7,6 @@ EnOS智能物联网操作系统
    :caption: 版本信息
 
    releasenotes/index.rst
-   releasenotes/knownissue
-   doc_updates
 
 
 .. toctree::
