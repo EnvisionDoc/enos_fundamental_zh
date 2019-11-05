@@ -1,6 +1,6 @@
 # Unit 4: Managing and Processing Real-time Data
 
-With your devices connected, your data starts to accumulate on EnOS. It could be quite a challenge to manage the vast amount of IoT data. Data Asset Management offering provides services that help you reduce your cost on data storage, lowers development barrior of stream analytics, and increases data access efficiency. 
+With your devices connected, your data starts to accumulate on EnOS. It could be quite a challenge to manage the vast amount of IoT data. Data Asset Management offering provides services that help you reduce your cost on data storage, lowers development barrier of stream analytics, and increases data access efficiency. 
 
 Before you dive into the offering, you'll want to get yourself familiar with the [key concepts](/docs/data-asset/en/2.0.8/data_asset_concepts) about stream data processing and data storage.
 
